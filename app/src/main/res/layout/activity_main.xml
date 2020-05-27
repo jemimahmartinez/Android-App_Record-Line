@@ -86,7 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:background="@drawable/rock">
+                android:background="@drawable/electronic">
                 <TextView
                     style="@style/CategoryTextStyle"
                     android:layout_width="wrap_content"
@@ -99,16 +99,18 @@
             style="@style/CategoryCardStyle"
             android:layout_width="match_parent"
             android:layout_height="120dp">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:background="@drawable/rock">
+                android:background="@drawable/hiphop"
+                android:gravity="center">
+
                 <TextView
                     style="@style/CategoryTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/hiphop"/>
+                    android:text="@string/hiphop" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
@@ -120,7 +122,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:background="@drawable/rock">
+                android:background="@drawable/jazz">
                 <TextView
                     style="@style/CategoryTextStyle"
                     android:layout_width="wrap_content"

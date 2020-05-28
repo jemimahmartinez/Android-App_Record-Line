@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,46 +19,68 @@
             android:id="@+id/edit_text_username" />
 <!--        android:inputType="textEmailAddress" for search -->
 
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/my_recycler_view"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Search"
+                android:layout_marginBottom="8dp"
+                android:id="@+id/edit_text" />
+            <!--        android:inputType="textEmailAddress" for search -->
+        </android.support.v7.widget.RecyclerView>
+
         <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:orientation="horizontal">
+<!--            <android.support.v7.widget.RecyclerView-->
+<!--                android:id="@+id/my_recycler_view"-->
+<!--                android:scrollbars="vertical"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent">-->
 
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:scaleType="centerCrop"
-                android:id="@+id/vinyl"
-                android:layout_marginRight="16dp"
-                android:src="@drawable/vinyl"/>
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/vinyl"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/vinyl"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="34sp"
+                    android:layout_toRightOf="@id/vinyl"
+                    android:id="@+id/text_view_album_name"
+                    android:text="Test Album" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/text_view_artist_name"
+                    android:textSize="24sp"
+                    android:layout_below="@id/text_view_album_name"
+                    android:layout_toRightOf="@id/vinyl"
+                    android:text="Artist Name" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textSize="24sp"
+                    android:layout_below="@id/text_view_artist_name"
+                    android:layout_toRightOf="@id/vinyl"
+                    android:text="Top Song" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="34sp"
-                android:layout_toRightOf="@id/vinyl"
-                android:id="@+id/text_view_album_name"
-                android:text="Test Album" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:id="@+id/text_view_artist_name"
-                android:textSize="24sp"
-                android:layout_below="@id/text_view_album_name"
-                android:layout_toRightOf="@id/vinyl"
-                android:text="Artist Name" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:textSize="24sp"
-                android:layout_below="@id/text_view_artist_name"
-                android:layout_toRightOf="@id/vinyl"
-                android:text="Top Song" />
+<!--        </android.support.v7.widget.RecyclerView>-->
         </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

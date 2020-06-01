@@ -18,14 +18,12 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        //Testing the dictionary
-        Map<Integer, String> albumsDict = DataProvider.generateAlbumList();
-        List<String> albumsList = new ArrayList<String>(albumsDict.values());
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this,
-                R.layout.list_view_album_item,
-                albumsList);
-        ListView listView = (ListView) findViewById(R.id.listView);
-        listView.setAdapter(itemsAdapter);
+       List<Album> albumsList = DataProvider.getAlbumList();
+       AlbumAdapter itemsAdapter = new AlbumAdapter(this,
+               R.layout.list_view_album_item,
+               albumsList);
+       ListView listView = (ListView) findViewById(R.id.listView);
+       listView.setAdapter(itemsAdapter);
 
 
     }

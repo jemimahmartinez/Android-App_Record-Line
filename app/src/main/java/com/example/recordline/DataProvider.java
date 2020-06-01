@@ -22,14 +22,14 @@ public class DataProvider {
         return albums;
     }
 
-    public static List<AlbumList> getAlbumList() {
-        List<AlbumList> albumList = new ArrayList<AlbumList>();
+    public static List<Album> getAlbumList() {
+        List<Album> albumList = new ArrayList<Album>();
         Map<Integer, String> albums = generateAlbumList();
         for (Integer key : albums.keySet()) {
             int digit = key;
             String albumName = albums.get(key);
             String vinyl = "vinyl"+String.valueOf(key);
-            AlbumList n = new AlbumList(digit, albumName, vinyl);
+            Album n = new Album(digit, albumName, vinyl);
             albumList.add(n);
         }
         return albumList;

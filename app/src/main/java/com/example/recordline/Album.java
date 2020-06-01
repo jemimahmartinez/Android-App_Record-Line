@@ -1,6 +1,6 @@
 package com.example.recordline;
 
-public class AlbumList {
+public class Album {
     int digit;
     String albumName, vinylFileName;
 
@@ -8,7 +8,7 @@ public class AlbumList {
         return digit;
     }
 
-    public String getalbumName() {
+    public String getAlbumName() {
         return albumName;
     }
 
@@ -16,7 +16,7 @@ public class AlbumList {
         return vinylFileName;
     }
 
-    public AlbumList(int digit, String albumName, String vinylFileName) {
+    public Album(int digit, String albumName, String vinylFileName) {
         this.digit = digit;
         this.albumName = albumName;
         this.vinylFileName = vinylFileName;

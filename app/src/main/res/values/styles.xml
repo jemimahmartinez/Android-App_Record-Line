@@ -14,7 +14,7 @@
     </style>
 
     <style name="CategoryTextStyle">
-        <item name="android:textSize">50sp</item>
+        <item name="android:textSize">60sp</item>
         <item name="android:textColor">@color/categoryColor</item>
         <item name="android:fontFamily">@font/oswald</item>
         <item name="android:layout_marginBottom">4dp</item>

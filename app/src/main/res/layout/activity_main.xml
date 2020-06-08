@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -12,9 +15,10 @@
         android:padding="16dp">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/activity_main_rock"
             style="@style/CategoryCardStyle"
             android:layout_width="match_parent"
-            android:layout_height="120dp">
+            android:layout_height="150dp">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -29,9 +33,10 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/activity_main_pop"
             style="@style/CategoryCardStyle"
             android:layout_width="match_parent"
-            android:layout_height="120dp">
+            android:layout_height="150dp">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -46,9 +51,10 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/activity_main_classical"
             style="@style/CategoryCardStyle"
             android:layout_width="match_parent"
-            android:layout_height="120dp">
+            android:layout_height="150dp">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -63,9 +69,10 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/activity_main_metal"
             style="@style/CategoryCardStyle"
             android:layout_width="match_parent"
-            android:layout_height="120dp">
+            android:layout_height="150dp">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -78,10 +85,12 @@
                     android:text="@string/metal"/>
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
+            android:id="@+id/activity_main_electronic"
             style="@style/CategoryCardStyle"
             android:layout_width="match_parent"
-            android:layout_height="120dp">
+            android:layout_height="150dp">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -96,9 +105,10 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/activity_main_hiphop"
             style="@style/CategoryCardStyle"
             android:layout_width="match_parent"
-            android:layout_height="120dp">
+            android:layout_height="150dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -110,14 +120,15 @@
                     style="@style/CategoryTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/hiphop" />
+                    android:text="@string/hiphop"/>
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/activity_main_jazz"
             style="@style/CategoryCardStyle"
             android:layout_width="match_parent"
-            android:layout_height="120dp">
+            android:layout_height="150dp">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -130,126 +141,6 @@
                     android:text="@string/jazz"/>
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            style="@style/CategoryCardStyle"
-            android:layout_width="match_parent"
-            android:layout_height="120dp">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:background="@drawable/rock">
-                <TextView
-                    style="@style/CategoryTextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/soul"/>
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            style="@style/CategoryCardStyle"
-            android:layout_width="match_parent"
-            android:layout_height="120dp">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:background="@drawable/rock">
-                <TextView
-                    style="@style/CategoryTextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/blues"/>
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            style="@style/CategoryCardStyle"
-            android:layout_width="match_parent"
-            android:layout_height="120dp">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:background="@drawable/rock">
-                <TextView
-                    style="@style/CategoryTextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/reggae"/>
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            style="@style/CategoryCardStyle"
-            android:layout_width="match_parent"
-            android:layout_height="120dp">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:background="@drawable/rock">
-                <TextView
-                    style="@style/CategoryTextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/soundtrack"/>
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            style="@style/CategoryCardStyle"
-            android:layout_width="match_parent"
-            android:layout_height="120dp">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:background="@drawable/rock">
-                <TextView
-                    style="@style/CategoryTextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/indie"/>
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            style="@style/CategoryCardStyle"
-            android:layout_width="match_parent"
-            android:layout_height="120dp">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:background="@drawable/rock">
-                <TextView
-                    style="@style/CategoryTextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/country"/>
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            style="@style/CategoryCardStyle"
-            android:layout_width="match_parent"
-            android:layout_height="120dp">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:background="@drawable/rock">
-                <TextView
-                    style="@style/CategoryTextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/funk"/>
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-
 
     </LinearLayout>
 </ScrollView>

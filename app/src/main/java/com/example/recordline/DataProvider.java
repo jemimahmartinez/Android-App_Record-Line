@@ -15,7 +15,7 @@ public class DataProvider {
         albums.put(3, "Exile On Main St."); //The Rolling Stones
         albums.put(4, "Are You Experienced?"); //The Jimi Hendrix Experience
         albums.put(5, "Born To Run"); //Bruce Springsteen
-        albums.put(6, "Lead Zeppelin IV"); //Led Zeppelin
+        albums.put(6, "Led Zeppelin IV"); //Led Zeppelin
         albums.put(7, "Never Mind The Bollocks, Here's The Sex Pistols"); //Sex Pistols
         albums.put(8, "Who's Next"); //The Who
         albums.put(9, "Everybody Knows This is Nowhere"); //Neil Young

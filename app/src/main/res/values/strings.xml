@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">RecordLine</string>
+    <string name="rock">Rock</string>
+    <string name="pop">Pop</string>
+    <string name="classical">Classical</string>
+    <string name="metal">Metal</string>
+    <string name="electronic">Electronic</string>
+    <string name="hiphop">Hip Hop</string>
+    <string name="jazz">Jazz</string>
+    <string name="soul">Soul</string>
+    <string name="blues">Blues</string>
+    <string name="reggae">Reggae</string>
+    <string name="soundtrack">Soundtrack</string>
+    <string name="indie">Alt/Indie</string>
+    <string name="country">Country</string>
+    <string name="funk">Funk</string>
 </resources>

@@ -2,10 +2,12 @@ package com.example.recordline;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +19,10 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+
+        Intent thisIntent = getIntent();
+        String message = thisIntent.getStringExtra("GenreFromMainActivity");
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 
        List<Album> albumsList = DataProvider.getAlbumList();
        AlbumAdapter itemsAdapter = new AlbumAdapter(this,

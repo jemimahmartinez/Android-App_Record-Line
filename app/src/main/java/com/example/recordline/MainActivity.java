@@ -22,12 +22,73 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        CardView rockCardView = (CardView) findViewById(R.id.activity_main_rock);
+        CardView rockCardView = findViewById(R.id.activity_main_rock);
         rockCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent rockIntent = new Intent(getBaseContext(), ListActivity.class);
-                startActivity(rockIntent);
+                Intent intent = new Intent(getBaseContext(), ListActivity.class);
+                intent.putExtra("GenreFromMainActivity", "rock");
+                startActivity(intent);
+            }
+        });
+
+        CardView popCardView = findViewById(R.id.activity_main_pop);
+        popCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), ListActivity.class);
+                intent.putExtra("GenreFromMainActivity", "pop");
+                startActivity(intent);
+            }
+        });
+
+        CardView classicalCardView = findViewById(R.id.activity_main_classical);
+        classicalCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), ListActivity.class);
+                intent.putExtra("GenreFromMainActivity", "classical");
+                startActivity(intent);
+            }
+        });
+
+        CardView metalCardView = findViewById(R.id.activity_main_metal);
+        metalCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), ListActivity.class);
+                intent.putExtra("GenreFromMainActivity", "metal");
+                startActivity(intent);
+            }
+        });
+
+        CardView electronicCardView = findViewById(R.id.activity_main_electronic);
+        electronicCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), ListActivity.class);
+                intent.putExtra("GenreFromMainActivity", "electronic");
+                startActivity(intent);
+            }
+        });
+
+        CardView hiphopCardView = findViewById(R.id.activity_main_hiphop);
+        hiphopCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), ListActivity.class);
+                intent.putExtra("GenreFromMainActivity", "hiphop");
+                startActivity(intent);
+            }
+        });
+
+        CardView jazzCardView = findViewById(R.id.activity_main_jazz);
+        jazzCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), ListActivity.class);
+                intent.putExtra("GenreFromMainActivity", "jazz");
+                startActivity(intent);
             }
         });
     }
@@ -36,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_search, menu);
+
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         MenuItem searchItem = menu.findItem(R.id.menu_search);
         SearchView searchView = (SearchView) searchItem.getActionView();

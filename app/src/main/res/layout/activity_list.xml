@@ -4,8 +4,6 @@
     android:id="@+id/listView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="8dp"
-    android:padding="16dp"
     android:divider="@android:color/transparent"
     android:dividerHeight="10sp"
     tools:context=".ListActivity"/>

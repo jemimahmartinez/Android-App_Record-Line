@@ -21,8 +21,8 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
 
         Intent thisIntent = getIntent();
-        String message = thisIntent.getStringExtra("GenreFromMainActivity");
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+        String genre = thisIntent.getStringExtra("GenreFromMainActivity");
+        Toast.makeText(this, genre, Toast.LENGTH_LONG).show();
 
        List<Album> albumsList = DataProvider.getAlbumList();
        AlbumAdapter itemsAdapter = new AlbumAdapter(this,

@@ -3,8 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_height="match_parent"
     android:elevation="4dp"
     app:cardCornerRadius="4dp">
     <RelativeLayout
@@ -13,40 +12,45 @@
         android:orientation="horizontal"
         android:padding="16dp"
         style="@style/CategoryCardStyle">
+
         <ImageView
-            android:layout_width="125dp"
-            android:layout_height="125dp"
-            android:src="@drawable/vinyl1"
+            android:id="@+id/icon_image_view"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
             android:layout_gravity="center"
-            android:id="@+id/icon_image_view" />
+            android:src="@drawable/vinyl1"
+            android:layout_centerHorizontal="true"
+            />
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:textSize="25sp"
-            android:layout_toRightOf="@id/icon_image_view"
-            android:layout_gravity="top"
             android:id="@+id/text_view_album_name"
-            android:text="Album Name" />
-        <TextView
+            android:text="Album Name"
+            android:layout_below="@id/icon_image_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_marginLeft="15dp"
-            android:id="@+id/text_view_artist_name"
-            android:textSize="15sp"
-            android:layout_below="@id/text_view_album_name"
-            android:layout_toRightOf="@id/icon_image_view"
-            android:text="Artist Name" />
+            android:textSize="20sp"
+            android:layout_gravity="top"/>
         <TextView
+            android:id="@+id/text_view_artist_name"
+            android:text="Artist Name"
+            android:layout_below="@id/text_view_album_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="15dp"
-            android:textSize="10sp"
-            android:layout_below="@id/text_view_artist_name"
-            android:layout_toRightOf="@id/icon_image_view"
-            android:text="Top Song" />
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/text_view_release_date"
+            android:text="Release Date"
+            android:layout_toRightOf="@id/text_view_artist_name"
+            android:layout_below="@id/text_view_album_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="5dp"
+            android:textSize="15sp" />
 
     </RelativeLayout>
 

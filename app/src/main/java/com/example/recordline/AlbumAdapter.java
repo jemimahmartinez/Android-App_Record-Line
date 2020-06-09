@@ -45,7 +45,8 @@ public class AlbumAdapter extends ArrayAdapter {
         //Set the attributed of list_view_number_item views
         ImageView iconImageView = (ImageView) currentListViewItem.findViewById(R.id.icon_image_view);
         int i = mContext.getResources().getIdentifier(
-                currentAlbum.getVinylFileName(), "drawable", mContext.getPackageName());
+                currentAlbum.getVinylFileName(), "drawable",
+                mContext.getPackageName());
 
         //Setting the icon
         iconImageView.setImageResource(i);

@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#900000</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="categoryColor">#FFFFFF</color>
+    <color name="topAlbumsColor">#CC0000</color>
 </resources>

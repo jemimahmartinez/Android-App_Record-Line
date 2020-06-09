@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">RecordLine</string>
+
+    <string name="top_albums">Current Top 10</string>
+
     <string name="rock">Rock</string>
     <string name="pop">Pop</string>
     <string name="classical">Classical</string>

@@ -26,8 +26,21 @@ public class MainActivity extends AppCompatActivity {
         rockCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                Intent rockIntent = new Intent(getBaseContext(), ListActivity.class);
                 Intent rockIntent = new Intent(getBaseContext(), ListActivity.class);
+                rockIntent.putExtra("GenreFromMainActivity", "rock");
                 startActivity(rockIntent);
+            }
+        });
+
+        CardView popCardView = (CardView) findViewById(R.id.activity_main_pop);
+        popCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent rockIntent = new Intent(getBaseContext(), ListActivity.class);
+                Intent popIntent = new Intent(getBaseContext(), ListActivity.class);
+                popIntent.putExtra("GenreFromMainActivity", "pop");
+                startActivity(popIntent);
             }
         });
     }

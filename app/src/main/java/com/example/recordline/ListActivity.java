@@ -15,6 +15,12 @@ import java.util.Map;
 
 public class ListActivity extends AppCompatActivity {
 
+//    private String genre;
+//
+//    public ListActivity(String genre) {
+//        this.genre = genre;
+//    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +30,7 @@ public class ListActivity extends AppCompatActivity {
         String genre = thisIntent.getStringExtra("GenreFromMainActivity");
         Toast.makeText(this, genre, Toast.LENGTH_LONG).show();
 
-       List<Album> albumsList = DataProvider.getAlbumList();
+       List<Album> albumsList = DataProvider.getAlbumList(genre);
        AlbumAdapter itemsAdapter = new AlbumAdapter(this,
                R.layout.list_view_album_item,
                albumsList);

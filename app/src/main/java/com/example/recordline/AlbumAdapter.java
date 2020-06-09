@@ -50,8 +50,17 @@ public class AlbumAdapter extends ArrayAdapter {
         //Setting the icon
         iconImageView.setImageResource(i);
 
+        //Set album name
         TextView albumTextView = (TextView) currentListViewItem.findViewById(R.id.text_view_album_name);
         albumTextView.setText(currentAlbum.getAlbumName());
+
+        //Set artist name
+        TextView artistTextView = (TextView) currentListViewItem.findViewById(R.id.text_view_artist_name);
+        artistTextView.setText(currentAlbum.getArtistName());
+
+        //Set release date
+        TextView releaseDTextView = (TextView) currentListViewItem.findViewById(R.id.text_view_release_date);
+        releaseDTextView.setText(currentAlbum.getReleaseDate());
 
         return currentListViewItem;
     }

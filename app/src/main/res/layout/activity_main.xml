@@ -11,13 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/cardview_light_background"
-        android:padding="16dp">
+        android:padding="16dp"
+        >
 
         <androidx.cardview.widget.CardView
             android:id="@+id/activity_main_rock"
             style="@style/CategoryCardStyle"
             android:layout_width="match_parent"
-            android:layout_height="150dp">
+            android:layout_height="150dp"
+            >
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

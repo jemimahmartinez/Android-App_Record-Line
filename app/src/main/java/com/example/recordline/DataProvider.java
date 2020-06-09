@@ -68,16 +68,16 @@ public class DataProvider {
     public static Map<Integer, List<String>> generateMetalAlbumList() {
         Map<Integer, List<String>> albums =
                 new LinkedHashMap<Integer, List<String>>();
-        List<String> metalAlbum1= new ArrayList<String>(Arrays.asList("The Joy Of Motion", "Animals As Leaders", "| year"));
-        List<String> metalAlbum2= new ArrayList<String>(Arrays.asList("Constellations", "August Burns Red", "| year"));
-        List<String> metalAlbum3= new ArrayList<String>(Arrays.asList("Toxicity", "System Of A Down", "| year")); //up to here
-        List<String> metalAlbum4= new ArrayList<String>(Arrays.asList("Back In Black", "AC/DC", "| year"));
-        List<String> metalAlbum5= new ArrayList<String>(Arrays.asList("Metallica", "Metallica", "| year"));
-        List<String> metalAlbum6= new ArrayList<String>(Arrays.asList("Killing Machine", "Judas Priest", "| year"));
-        List<String> metalAlbum7= new ArrayList<String>(Arrays.asList("Hybrid Theory", "Linkin Park", "| year"));
-        List<String> metalAlbum8= new ArrayList<String>(Arrays.asList("Skipknot", "Skipknot", "| year"));
-        List<String> metalAlbum9= new ArrayList<String>(Arrays.asList("The Fall Of Ideals", "All That Remains", "| year"));
-        List<String> metalAlbum10= new ArrayList<String>(Arrays.asList("Rage Against The Machine", "Rage Against The Machine", "| year"));
+        List<String> metalAlbum1= new ArrayList<String>(Arrays.asList("The Joy Of Motion", "Animals As Leaders", "| 2014"));
+        List<String> metalAlbum2= new ArrayList<String>(Arrays.asList("Constellations", "August Burns Red", "| 2009"));
+        List<String> metalAlbum3= new ArrayList<String>(Arrays.asList("Toxicity", "System Of A Down", "| 2001")); //up to here
+        List<String> metalAlbum4= new ArrayList<String>(Arrays.asList("Back In Black", "AC/DC", "| 1980"));
+        List<String> metalAlbum5= new ArrayList<String>(Arrays.asList("Metallica", "Metallica", "| 1991"));
+        List<String> metalAlbum6= new ArrayList<String>(Arrays.asList("Killing Machine", "Judas Priest", "| 1978"));
+        List<String> metalAlbum7= new ArrayList<String>(Arrays.asList("Hybrid Theory", "Linkin Park", "| 2000"));
+        List<String> metalAlbum8= new ArrayList<String>(Arrays.asList("Skipknot", "Skipknot", "| 1999"));
+        List<String> metalAlbum9= new ArrayList<String>(Arrays.asList("The Fall Of Ideals", "All That Remains", "| 2006"));
+        List<String> metalAlbum10= new ArrayList<String>(Arrays.asList("Rage Against The Machine", "Rage Against The Machine", "| 1991"));
 
         //key, album details
         albums.put(1, metalAlbum1);
@@ -96,16 +96,16 @@ public class DataProvider {
     public static Map<Integer, List<String>> generateElectronicAlbumList() {
         Map<Integer, List<String>> albums =
                 new LinkedHashMap<Integer, List<String>>();
-        List<String> electAlbum1= new ArrayList<String>(Arrays.asList("Discovery", "Daft Punk", "| year"));
-        List<String> electAlbum2= new ArrayList<String>(Arrays.asList("Floral Shoppe", "Macintosh Plus", "| year"));
-        List<String> electAlbum3= new ArrayList<String>(Arrays.asList("The North Borders", "Bonobo", "| year"));
-        List<String> electAlbum4= new ArrayList<String>(Arrays.asList("4x4=12", "Deadmau5", "| year"));
-        List<String> electAlbum5= new ArrayList<String>(Arrays.asList("Homework", "Daft Punk", "| year"));
-        List<String> electAlbum6= new ArrayList<String>(Arrays.asList("Midnight In Peckham", "Chaos In The CBD", "| year"));
-        List<String> electAlbum7= new ArrayList<String>(Arrays.asList("Cross", "Justice", "| year"));
-        List<String> electAlbum8= new ArrayList<String>(Arrays.asList("Cosmogramma", "Flying Lotus", "| year"));
-        List<String> electAlbum9= new ArrayList<String>(Arrays.asList("Aawke", "Tycho", "| year"));
-        List<String> electAlbum10= new ArrayList<String>(Arrays.asList("Alphelion", "Ross From Friends", "| year"));
+        List<String> electAlbum1= new ArrayList<String>(Arrays.asList("Discovery", "Daft Punk", "| 2001"));
+        List<String> electAlbum2= new ArrayList<String>(Arrays.asList("Floral Shoppe", "Macintosh Plus", "| 2011"));
+        List<String> electAlbum3= new ArrayList<String>(Arrays.asList("The North Borders", "Bonobo", "| 2013"));
+        List<String> electAlbum4= new ArrayList<String>(Arrays.asList("4x4=12", "Deadmau5", "| 2010"));
+        List<String> electAlbum5= new ArrayList<String>(Arrays.asList("Homework", "Daft Punk", "| 1997"));
+        List<String> electAlbum6= new ArrayList<String>(Arrays.asList("Midnight In Peckham", "Chaos In The CBD", "| 2015"));
+        List<String> electAlbum7= new ArrayList<String>(Arrays.asList("Cross", "Justice", "| 2007"));
+        List<String> electAlbum8= new ArrayList<String>(Arrays.asList("Cosmogramma", "Flying Lotus", "| 2010"));
+        List<String> electAlbum9= new ArrayList<String>(Arrays.asList("Awake", "Tycho", "| 2014"));
+        List<String> electAlbum10= new ArrayList<String>(Arrays.asList("Alphelion", "Ross From Friends", "| 2018"));
 
         //key, album details
         albums.put(1, electAlbum1);
@@ -124,16 +124,16 @@ public class DataProvider {
     public static Map<Integer, List<String>> generateHipHopAlbumList() {
         Map<Integer, List<String>> albums =
                 new LinkedHashMap<Integer, List<String>>();
-        List<String> hiphopAlbum1= new ArrayList<String>(Arrays.asList("Midnight Marauders", "A Tribed Called Quest", "| year"));
-        List<String> hiphopAlbum2= new ArrayList<String>(Arrays.asList("How To Pimp A Butterfly", "Kendrick Lamar", "| year"));
-        List<String> hiphopAlbum3= new ArrayList<String>(Arrays.asList("Telefone", "Noname", "| year"));
-        List<String> hiphopAlbum4= new ArrayList<String>(Arrays.asList("Malibu", "Anderson Paak", "| year"));
-        List<String> hiphopAlbum5= new ArrayList<String>(Arrays.asList("Swimming", "Miller Mac", "| year"));
-        List<String> hiphopAlbum6= new ArrayList<String>(Arrays.asList("College Dropout", "Kanye West", "| year"));
-        List<String> hiphopAlbum7= new ArrayList<String>(Arrays.asList("Iridescence", "Brockhampton", "| year"));
-        List<String> hiphopAlbum8= new ArrayList<String>(Arrays.asList("Malibu Ken", "Aesop Rock & TOBACCO", "| year"));
-        List<String> hiphopAlbum9= new ArrayList<String>(Arrays.asList("2014 Forest Hills Drive", "Cole J", "| year"));
-        List<String> hiphopAlbum10= new ArrayList<String>(Arrays.asList("Operation Doomsday", "Mf Doom", "| year"));
+        List<String> hiphopAlbum1= new ArrayList<String>(Arrays.asList("Midnight Marauders", "A Tribed Called Quest", "| 1993"));
+        List<String> hiphopAlbum2= new ArrayList<String>(Arrays.asList("How To Pimp A Butterfly", "Kendrick Lamar", "| 2015"));
+        List<String> hiphopAlbum3= new ArrayList<String>(Arrays.asList("Telefone", "Noname", "| 2016"));
+        List<String> hiphopAlbum4= new ArrayList<String>(Arrays.asList("Malibu", "Anderson Paak", "| 2016"));
+        List<String> hiphopAlbum5= new ArrayList<String>(Arrays.asList("Swimming", "Miller Mac", "| 2018"));
+        List<String> hiphopAlbum6= new ArrayList<String>(Arrays.asList("College Dropout", "Kanye West", "| 2004"));
+        List<String> hiphopAlbum7= new ArrayList<String>(Arrays.asList("Iridescence", "Brockhampton", "| 2018"));
+        List<String> hiphopAlbum8= new ArrayList<String>(Arrays.asList("Malibu Ken", "Aesop Rock & TOBACCO", "| 2019"));
+        List<String> hiphopAlbum9= new ArrayList<String>(Arrays.asList("2014 Forest Hills Drive", "Cole J", "| 2014"));
+        List<String> hiphopAlbum10= new ArrayList<String>(Arrays.asList("Operation Doomsday", "Mf Doom", "| 1999"));
 
         //key, album details
         albums.put(1, hiphopAlbum1);
@@ -152,15 +152,15 @@ public class DataProvider {
     public static Map<Integer, List<String>> generateJazzAlbumList() {
         Map<Integer, List<String>> albums =
                 new LinkedHashMap<Integer, List<String>>();
-        List<String> jazzAlbum1= new ArrayList<String>(Arrays.asList("Kind Of Blue", "Miles Davis", "| year"));
-        List<String> jazzAlbum2= new ArrayList<String>(Arrays.asList("4", "Badbadnotgood", "| year"));
-        List<String> jazzAlbum3= new ArrayList<String>(Arrays.asList("Heaven And Earth", "Washington Kamasi", "| year"));
-        List<String> jazzAlbum4= new ArrayList<String>(Arrays.asList("Dave Brubeck's Greatest Hits", "Dave Brubeck", "| year"));
-        List<String> jazzAlbum5= new ArrayList<String>(Arrays.asList("Head Hunters", "Herbie Hancock", "| year"));
-        List<String> jazzAlbum6= new ArrayList<String>(Arrays.asList("Animalia", "Mammal Hands", "| year"));
-        List<String> jazzAlbum7= new ArrayList<String>(Arrays.asList("Fodder On My Wings", "Nina Simone", "| year"));
-        List<String> jazzAlbum8= new ArrayList<String>(Arrays.asList("Future Shock", "Herbie Hancock", "| year"));
-        List<String> jazzAlbum9= new ArrayList<String>(Arrays.asList("Beautiful Game", "Vulfpeck", "| year"));
+        List<String> jazzAlbum1= new ArrayList<String>(Arrays.asList("Kind Of Blue", "Miles Davis", "| 1959"));
+        List<String> jazzAlbum2= new ArrayList<String>(Arrays.asList("4", "BADBADNOTGOOD", "| 2016"));
+        List<String> jazzAlbum3= new ArrayList<String>(Arrays.asList("Heaven And Earth", "Kamasi Washington", "| 2018"));
+        List<String> jazzAlbum4= new ArrayList<String>(Arrays.asList("Dave Brubeck's Greatest Hits", "Dave Brubeck", "| 1966"));
+        List<String> jazzAlbum5= new ArrayList<String>(Arrays.asList("Head Hunters", "Herbie Hancock", "| 1973"));
+        List<String> jazzAlbum6= new ArrayList<String>(Arrays.asList("Animalia", "Mammal Hands", "| 2014"));
+        List<String> jazzAlbum7= new ArrayList<String>(Arrays.asList("Fodder On My Wings", "Nina Simone", "| 1982"));
+        List<String> jazzAlbum8= new ArrayList<String>(Arrays.asList("Future Shock", "Herbie Hancock", "| 1983"));
+        List<String> jazzAlbum9= new ArrayList<String>(Arrays.asList("The Beautiful Game", "Vulfpeck", "| 2016"));
         List<String> jazzAlbum10= new ArrayList<String>(Arrays.asList("Songs In The Key Of Life", "Stevie Wonder", "| 1976"));
 
         //key, album details

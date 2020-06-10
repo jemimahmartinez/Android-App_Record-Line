@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -34,8 +35,19 @@ public class ListActivity extends AppCompatActivity {
                R.layout.list_view_album_item,
                albumsList);
        ListView listView = (ListView) findViewById(R.id.listView);
+//       listView.setOnClickListener(new View.OnClickListener() {
+//           @Override
+//           public void onClick(View view) {
+//               Intent intent = new Intent(getBaseContext(), DetailsActivity.class);
+//               intent.putExtra("GenreFromListActivity", "hi");
+//               startActivity(intent);
+//           }
+//       });
        listView.setAdapter(itemsAdapter);
+    }
 
-
+    public void showDetailsActivity(View v) {
+        Intent detailsIntent = new Intent(this, DetailsActivity.class);
+        startActivity(detailsIntent);
     }
 }

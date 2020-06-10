@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ScrollView;
@@ -18,12 +19,9 @@ import java.util.Map;
 
 public class ListActivity extends AppCompatActivity {
 
-//    private String genre;
-//
-//    public ListActivity(String genre) {
-//        this.genre = genre;
-//    }
-
+    AlbumAdapter itemsAdapter;
+    public static final String DETAIL_KEY = "album";
+    ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,26 +31,37 @@ public class ListActivity extends AppCompatActivity {
         String genre = thisIntent.getStringExtra("GenreFromMainActivity");
 
         List<Album> albumsList = DataProvider.getAlbumList(genre);
-        AlbumAdapter itemsAdapter = new AlbumAdapter(this,
+        itemsAdapter = new AlbumAdapter(this,
                R.layout.list_view_album_item,
                albumsList);
-        ListView listView = (ListView) findViewById(R.id.listView);
+        listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(itemsAdapter);
 
-        CardView albumDetailView = (CardView) findViewById(R.id.album_item);
-        albumDetailView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent detailsIntent = new Intent(getBaseContext(), DetailsActivity.class);
-                detailsIntent.putExtra("MessageFromListActivity", "hi");
-                startActivity(detailsIntent);
-            }
-        });
+        showDetailsActivity();
     }
 
-//    public void showDetailsActivity(View v) {
+    public void showDetailsActivity() {
 //        Intent detailsIntent = new Intent(this, DetailsActivity.class);
 //        detailsIntent.putExtra("price", "$10");
 //        startActivity(detailsIntent);
-//    }
+//        CardView albumDetailView = (CardView) findViewById(R.id.album_item);
+//        albumDetailView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent detailsIntent = new Intent(ListActivity.this, DetailsActivity.class);
+//                detailsIntent.putExtra("MessageFromListActivity", "hi");
+//                startActivity(detailsIntent);
+//            }
+//        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Launch the detail view passing book as an extra
+                Intent intent = new Intent(ListActivity.this, DetailsActivity.class);
+//                intent.putExtra(DETAIL_KEY, itemsAdapter.getItem(position));
+                startActivity(intent);
+            }
+        });
+    }
 }

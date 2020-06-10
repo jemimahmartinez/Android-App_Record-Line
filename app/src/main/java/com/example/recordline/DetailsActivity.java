@@ -13,6 +13,6 @@ public class DetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_details);
 
         Intent thisIntent = getIntent();
-        final String genre = thisIntent.getStringExtra("GenreFromListActivity");
+        String genre = thisIntent.getStringExtra("GenreFromListActivity");
     }
 }

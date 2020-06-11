@@ -68,10 +68,16 @@
         </LinearLayout>
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tracklist: "
+            android:layout_marginBottom="15dp"/>
+
+        <TextView
             android:id="@+id/text_view_tracklist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Track List"
+            android:text="List"
             android:layout_marginBottom="15dp"/>
 
 

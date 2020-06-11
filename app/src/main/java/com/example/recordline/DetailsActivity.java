@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.text.Html;
 
 import org.w3c.dom.Text;
 
@@ -74,7 +75,7 @@ public class DetailsActivity extends AppCompatActivity {
         artistName.setText(album.getArtistName());
         releaseDate.setText(album.getReleaseDate());
         price.setText(album.getPrice());
-        tracklist.setText(album.getTrackList());
+        tracklist.setText(Html.fromHtml(album.getTrackList()));
     }
 
     public void orderButtonPressed(View v) { //if email is not entered => cannot place order NEED TO CHANGE

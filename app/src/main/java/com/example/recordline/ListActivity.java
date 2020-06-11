@@ -22,13 +22,14 @@ public class ListActivity extends AppCompatActivity {
     AlbumAdapter itemsAdapter;
     public static final String DETAIL_KEY = "album";
     ListView listView;
+    String genre;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
         Intent thisIntent = getIntent();
-        String genre = thisIntent.getStringExtra("GenreFromMainActivity");
+        genre = thisIntent.getStringExtra("GenreFromMainActivity");
 
         List<Album> albumsList = DataProvider.getAlbumList(genre);
         itemsAdapter = new AlbumAdapter(this,
@@ -60,6 +61,7 @@ public class ListActivity extends AppCompatActivity {
                 // Launch the detail view passing book as an extra
                 Intent intent = new Intent(ListActivity.this, DetailsActivity.class);
 //                intent.putExtra(DETAIL_KEY, itemsAdapter.getItem(position));
+                intent.putExtra(DETAIL_KEY, DataProvider.getAlbumList(genre).indexOf(listView)); //DataProvider.getAlbumList(genre).indexOf(listView)
                 startActivity(intent);
             }
         });

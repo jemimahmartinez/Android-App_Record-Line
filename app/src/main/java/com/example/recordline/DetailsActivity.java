@@ -43,6 +43,7 @@ public class DetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
+        albumPic = (ImageView) findViewById(R.id.image_view_albumPic);
         albumName = (TextView) findViewById(R.id.text_view_albumName);
         artistName = (TextView) findViewById(R.id.text_view_artistName);
         releaseDate = (TextView) findViewById(R.id.text_view_releaseDate);
@@ -65,6 +66,10 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     private void loadAlbum(Album album) {
+        int id = this.getResources().getIdentifier(
+                album.getVinylFileName(), "drawable",
+                this.getPackageName());
+        albumPic.setImageResource(id);
         albumName.setText(album.getAlbumName());
         artistName.setText(album.getArtistName());
         releaseDate.setText(album.getReleaseDate());

@@ -14,6 +14,10 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
+import java.util.List;
+
 public class DetailsActivity extends AppCompatActivity {
 
     class ViewHolder {
@@ -27,25 +31,27 @@ public class DetailsActivity extends AppCompatActivity {
 
     ViewHolder vh;
     Order anOrder;
-//    AlbumAdapter itemsAdapter;
-//    private ImageView albumPic;
-//    private TextView albumName;
-//    private TextView artistName;
-//    private TextView releaseDate;
-//    private TextView price;
-//    private TextView tracklist;
+    private ImageView albumPic;
+    private TextView albumName;
+    private TextView artistName;
+    private TextView releaseDate;
+    private TextView price;
+    private TextView tracklist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
+        albumName = (TextView) findViewById(R.id.text_view_albumName);
+        artistName = (TextView) findViewById(R.id.text_view_artistName);
+        releaseDate = (TextView) findViewById(R.id.text_view_releaseDate);
+        price = (TextView) findViewById(R.id.text_view_price);
+        tracklist = (TextView) findViewById(R.id.text_view_tracklist);
+
         Intent thisIntent = getIntent();
-        String position = thisIntent.getStringExtra("album");
-
-//        Album album = (Album) thisIntent.getSerializableExtra(ListActivity.DETAIL_KEY);
-
-//        loadAlbum(album);
+        Album album = (Album) thisIntent.getSerializableExtra(ListActivity.DETAIL_KEY);
+        loadAlbum(album);
 
         vh = new ViewHolder();
         vh.priceEditText = (EditText) findViewById(R.id.edit_text_price);
@@ -56,24 +62,15 @@ public class DetailsActivity extends AppCompatActivity {
         vh.confirmButton = (Button) findViewById(R.id.confirm_button);
 
         anOrder = new Order();
-
-//        Album album = DataProvider.getAlbumList(genre);
-//        itemsAdapter = new AlbumAdapter(this,
-//                R.layout.list_view_album_item,
-//                albumsList);
-//        listView = (ListView) findViewById(R.id.listView);
-//        listView.setAdapter(itemsAdapter);
-
     }
 
-//    private void loadAlbum(Album album) {
-//        albumName.setText(album.getAlbumName());
-//        artistName.setText(album.getArtistName());
-//        releaseDate.setText(album.getReleaseDate());
-//        price.setText(album.getPrice());
-//        tracklist.setText(album.getTrackList());
-//
-//    }
+    private void loadAlbum(Album album) {
+        albumName.setText(album.getAlbumName());
+        artistName.setText(album.getArtistName());
+        releaseDate.setText(album.getReleaseDate());
+        price.setText(album.getPrice());
+        tracklist.setText(album.getTrackList());
+    }
 
     public void orderButtonPressed(View v) { //if email is not entered => cannot place order NEED TO CHANGE
         if ( !vh.priceEditText.getText().toString().isEmpty()) {

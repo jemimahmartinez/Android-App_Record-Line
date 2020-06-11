@@ -21,7 +21,7 @@
             android:layout_gravity="center"/>
 <!--        android:id="@+id/text_view_album_name"-->
         <TextView
-            android:id="@+id/albumName"
+            android:id="@+id/text_view_albumName"
             android:text="Album Name"
             android:layout_below="@id/icon_image_view"
             android:layout_width="wrap_content"
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content">
 <!--            android:id="@+id/text_view_artist_name"-->
             <TextView
-                android:id="@+id/artistName"
+                android:id="@+id/text_view_artistName"
                 android:text="Artist Name"
                 android:layout_below="@id/text_view_album_name"
                 android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
                 android:textSize="15sp" />
 <!--            android:id="@+id/text_view_release_date"-->
             <TextView
-                android:id="@+id/releaseDate"
+                android:id="@+id/text_view_releaseDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/text_view_album_name"
@@ -55,7 +55,7 @@
                 android:textSize="15sp" />
 <!--            android:id="@+id/text_view_price"-->
             <TextView
-                android:id="@+id/price"
+                android:id="@+id/text_view_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/text_view_album_name"
@@ -67,7 +67,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tracklist"
+            android:id="@+id/text_view_tracklist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Track List"

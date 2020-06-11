@@ -1,6 +1,8 @@
 package com.example.recordline;
 
-public class Album {
+import java.io.Serializable;
+
+public class Album implements Serializable {
     int digit;
     String albumName, vinylFileName, artistName, releaseDate, price, trackList;
 

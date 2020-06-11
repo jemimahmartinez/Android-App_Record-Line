@@ -250,18 +250,4 @@ public class DataProvider {
         }
         return albumList;
     }
-
-//    public static Album getAlbumDetails(String genre, Integer index) {
-//        List<Album> albumList = getAlbumList(genre);
-////        Map<Integer, List<String>> albums = chooseGenre(genre);
-//        int digit = index;
-//        String albumName = albumList.get(index).getAlbumName();
-//        String artistName = albumList.get(index).getArtistName();
-//        String releaseDate = albumList.get(index).getReleaseDate();
-//        String price = albumList.get(index).getPrice();
-//        String trackList = albumList.get(index).getTrackList();
-//        String vinyl = "album_"+genre+String.valueOf(index)+"_1";
-//        Album n = new Album(digit, albumName, vinyl, artistName, releaseDate, price, trackList);
-//        return n;
-//    }
 }

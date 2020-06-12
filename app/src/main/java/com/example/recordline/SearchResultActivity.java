@@ -15,7 +15,7 @@ public class SearchResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_result);
-        mTextViewSearchResult = findViewById(R.id.textViewSearchResult);
+        mTextViewSearchResult = findViewById(R.id.album_item);
         if (Intent.ACTION_SEARCH.equals(getIntent().getAction())) {
             handleSearch(getIntent().getStringExtra(SearchManager.QUERY));
 

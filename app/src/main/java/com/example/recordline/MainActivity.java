@@ -22,6 +22,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        CardView topCardView = findViewById(R.id.activity_main_top_albums);
+        topCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), ListActivity.class);
+                intent.putExtra("GenreFromMainActivity", "top");
+                startActivity(intent);
+            }
+        });
+
         CardView rockCardView = findViewById(R.id.activity_main_rock);
         rockCardView.setOnClickListener(new View.OnClickListener() {
             @Override

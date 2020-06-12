@@ -3,11 +3,16 @@ package com.example.recordline;
 import java.io.Serializable;
 
 public class Album implements Serializable {
+    String genre;
     int digit;
     String albumName, vinylFileName, artistName, releaseDate, price, trackList;
 
     public int getDigit() {
         return digit;
+    }
+
+    public String getAlbumGenre() {
+        return genre;
     }
 
     public String getAlbumName() {
@@ -26,7 +31,8 @@ public class Album implements Serializable {
 
     public String getTrackList() { return trackList; }
 
-    public Album(int digit, String albumName, String vinylFileName, String artistName, String releaseDate, String price, String trackList) {
+    public Album(String genre, int digit, String albumName, String vinylFileName, String artistName, String releaseDate, String price, String trackList) {
+        this.genre = genre;
         this.digit = digit;
         this.albumName = albumName;
         this.vinylFileName = vinylFileName;

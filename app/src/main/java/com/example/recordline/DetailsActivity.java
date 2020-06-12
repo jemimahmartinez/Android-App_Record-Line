@@ -80,6 +80,13 @@ public class DetailsActivity extends AppCompatActivity {
 
     public void orderButtonPressed(View v) { //if email is not entered => cannot place order NEED TO CHANGE
         if ( !vh.priceEditText.getText().toString().isEmpty()) {
+            Intent mIntent = getIntent();
+            int key = mIntent.getIntExtra("key", 0);
+            Intent thisIntent = getIntent();
+            Album album = (Album) thisIntent.getSerializableExtra(ListActivity.DETAIL_KEY);
+            String genre = album.getAlbumGenre();
+            DataProvider.iterateAlbumSale(genre, key);
+
             anOrder.setPricePerItem(Double.valueOf(vh.priceEditText.getText().toString()));
             anOrder.setUsername(vh.usernameEditText.getText().toString());
 

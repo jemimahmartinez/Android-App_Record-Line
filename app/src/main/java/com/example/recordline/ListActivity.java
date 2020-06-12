@@ -32,14 +32,12 @@ public class ListActivity extends AppCompatActivity {
 
         Intent thisIntent = getIntent();
         genre = thisIntent.getStringExtra("GenreFromMainActivity");
-
         List<Album> albumsList = DataProvider.getAlbumList(genre);
         itemsAdapter = new AlbumAdapter(this,
-               R.layout.list_view_album_item,
-               albumsList);
+                R.layout.list_view_album_item,
+                albumsList);
         listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(itemsAdapter);
-
         showDetailsActivity();
     }
 
@@ -50,7 +48,8 @@ public class ListActivity extends AppCompatActivity {
                 // Launch the detail view passing book as an extra
                 Intent intent = new Intent(ListActivity.this, DetailsActivity.class);
 //                intent.putExtra(DETAIL_KEY, itemsAdapter.getItem(position));
-                intent.putExtra(DETAIL_KEY, (Serializable) itemsAdapter.getItem(position)); //DataProvider.getAlbumList(genre).indexOf(listView)
+                intent.putExtra(DETAIL_KEY, (Serializable) itemsAdapter.getItem(position));//DataProvider.getAlbumList(genre).indexOf(listView)
+                intent.putExtra("key", position);
                 startActivity(intent);
             }
         });

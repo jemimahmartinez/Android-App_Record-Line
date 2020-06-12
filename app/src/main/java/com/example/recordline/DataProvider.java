@@ -1,5 +1,7 @@
 package com.example.recordline;
 
+import android.widget.Toast;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,8 +9,53 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Vector;
 
 public class DataProvider {
+    public static int[][] albumSales = {{1,3,4,19,2,4,1,0,1,8},
+                                        {2,2,13,0,5,7,6,2,7,10},
+                                        {2,13,18,13,16,4,2,7,6,10},
+                                        {1,19,1,3,16,4,9,7,2,1},
+                                        {1,5,2,5,0,4,16,2,1,21},
+                                        {1,12,1,0,2,2,12,12,2,4},
+                                        {3,3,2,17,19,2,13,3,1,6}};
+
+    public static void iterateAlbumSale(String genre, int c) {
+        int r = 0;
+        switch(genre) {
+            case "rock":
+                r = 0;
+                break;
+            case "pop":
+                r = 1;
+                break;
+            case "metal":
+                r = 2;
+                break;
+            case "electronic":
+                r = 3;
+                break;
+            case "hiphop":
+                r = 4;
+                break;
+            case "jazz":
+                r = 5;
+                break;
+            default: //classical
+                r = 6;
+                break;
+        }
+        albumSales[r][c]++;
+    }
+
+//    public static <K, V> K getKey(Map<K, V> map, V value) {
+//        for (Map.Entry<K, V> entry : map.entrySet()) {
+//            if (value.equals(entry.getValue())) {
+//                return entry.getKey();
+//            }
+//        }
+//        return null;
+//    }
 
     public static Map<Integer, List<String>> generateRockAlbumList() {
         Map<Integer, List<String>> albums =
@@ -306,17 +353,62 @@ public class DataProvider {
 
     public static List<Album> getAlbumList(String genre) {
         List<Album> albumList = new ArrayList<Album>();
-        Map<Integer, List<String>> albums = chooseGenre(genre);
-        for (Integer key : albums.keySet()) {
-            int digit = key;
-            String albumName = albums.get(key).get(0);
-            String artistName = albums.get(key).get(1);
-            String releaseDate = albums.get(key).get(2);
-            String price = albums.get(key).get(3);
-            String trackList = albums.get(key).get(4);
-            String vinyl = "album_"+genre+String.valueOf(key)+"_1";
-            Album n = new Album(digit, albumName, vinyl, artistName, releaseDate, price, trackList);
-            albumList.add(n);
+        if (genre.equals("top")) {
+            for (int j = 0; j < 10; j++) {
+                int max = 0;
+                for ( int i = 0; i < 7; i++ ) {
+                    if ( albumSales[i][j] > albumSales[max][j] ) {
+                        max = i;
+                    }
+                }
+                switch(max) {
+                    case 0:
+                        genre = "rock";
+                        break;
+                    case 1:
+                        genre = "pop";
+                        break;
+                    case 2:
+                        genre = "metal";
+                        break;
+                    case 3:
+                        genre = "electronic";
+                        break;
+                    case 4:
+                        genre = "hiphop";
+                        break;
+                    case 5:
+                        genre = "jazz";
+                        break;
+                    default: //classical
+                        genre = "classical";
+                        break;
+                }
+                Map<Integer, List<String>> albums = chooseGenre(genre);
+                int key = j + 1;
+                int digit = key;
+                String albumName = albums.get(key).get(0);
+                String artistName = albums.get(key).get(1);
+                String releaseDate = albums.get(key).get(2);
+                String price = albums.get(key).get(3);
+                String trackList = albums.get(key).get(4);
+                String vinyl = "album_" + genre + String.valueOf(key) + "_1";
+                Album n = new Album(genre, digit, albumName, vinyl, artistName, releaseDate, price, trackList);
+                albumList.add(n);
+            }
+        } else {
+            Map<Integer, List<String>> albums = chooseGenre(genre);
+            for (Integer key : albums.keySet()) {
+                int digit = key;
+                String albumName = albums.get(key).get(0);
+                String artistName = albums.get(key).get(1);
+                String releaseDate = albums.get(key).get(2);
+                String price = albums.get(key).get(3);
+                String trackList = albums.get(key).get(4);
+                String vinyl = "album_"+genre+String.valueOf(key)+"_1";
+                Album n = new Album(genre, digit, albumName, vinyl, artistName, releaseDate, price, trackList);
+                albumList.add(n);
+            }
         }
         return albumList;
     }

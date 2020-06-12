@@ -1,6 +1,8 @@
 package com.example.recordline;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.ActivityOptionsCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -47,4 +49,26 @@ public class ListActivity extends AppCompatActivity {
             }
         });
     }
+
+//    public void animateIntent(View view) {
+//
+//        // Ordinary Intent for launching a new activity
+//        Intent intent = new Intent(ListActivity.this, DetailsActivity.class);
+//
+//        // Get the transition name from the string
+//        String transitionName = getString(R.string.transition_string);
+//
+//        // Define the view that the animation will start from
+//        View viewStart = findViewById(R.id.icon_image_view);
+//
+//        ActivityOptionsCompat options =
+//
+//                ActivityOptionsCompat.makeSceneTransitionAnimation(this,
+//                        viewStart,   // Starting view
+//                        transitionName    // The String
+//                );
+//        //Start the Intent
+//        ActivityCompat.startActivity(this, intent, options.toBundle());
+//
+//    }
 }

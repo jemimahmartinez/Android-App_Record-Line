@@ -351,7 +351,7 @@ public class DataProvider {
         List<Album> searchList = new ArrayList<Album>();
         Map<Integer, List<String>> albums = chooseGenre("rock");
         for (int i = 1; i < 11; i++) {
-            if (albums.get(i).get(0).contains(search) || albums.get(i).get(1).contains(search) || albums.get(i).get(4).contains(search)) {
+            if (albums.get(i).get(0).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(1).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(4).toLowerCase().contains(search.toLowerCase())) {
                 String albumName = albums.get(i).get(0);
                 String artistName = albums.get(i).get(1);
                 String releaseDate = albums.get(i).get(2);
@@ -365,7 +365,7 @@ public class DataProvider {
         }
         albums = chooseGenre("pop");
         for (int i = 1; i < 11; i++) {
-            if (albums.get(i).get(0).contains(search) || albums.get(i).get(1).contains(search) || albums.get(i).get(4).contains(search)) {
+            if (albums.get(i).get(0).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(1).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(4).toLowerCase().contains(search.toLowerCase())) {
                 String albumName = albums.get(i).get(0);
                 String artistName = albums.get(i).get(1);
                 String releaseDate = albums.get(i).get(2);
@@ -379,7 +379,7 @@ public class DataProvider {
         }
         albums = chooseGenre("metal");
         for (int i = 1; i < 11; i++) {
-            if (albums.get(i).get(0).contains(search) || albums.get(i).get(1).contains(search) || albums.get(i).get(4).contains(search)) {
+            if (albums.get(i).get(0).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(1).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(4).toLowerCase().contains(search.toLowerCase())) {
                 String albumName = albums.get(i).get(0);
                 String artistName = albums.get(i).get(1);
                 String releaseDate = albums.get(i).get(2);
@@ -393,7 +393,7 @@ public class DataProvider {
         }
         albums = chooseGenre("electronic");
         for (int i = 1; i < 11; i++) {
-            if (albums.get(i).get(0).contains(search) || albums.get(i).get(1).contains(search) || albums.get(i).get(4).contains(search)) {
+            if (albums.get(i).get(0).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(1).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(4).toLowerCase().contains(search.toLowerCase())) {
                 String albumName = albums.get(i).get(0);
                 String artistName = albums.get(i).get(1);
                 String releaseDate = albums.get(i).get(2);
@@ -407,7 +407,7 @@ public class DataProvider {
         }
         albums = chooseGenre("hiphop");
         for (int i = 1; i < 11; i++) {
-            if (albums.get(i).get(0).contains(search) || albums.get(i).get(1).contains(search) || albums.get(i).get(4).contains(search)) {
+            if (albums.get(i).get(0).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(1).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(4).toLowerCase().contains(search.toLowerCase())) {
                 String albumName = albums.get(i).get(0);
                 String artistName = albums.get(i).get(1);
                 String releaseDate = albums.get(i).get(2);
@@ -421,7 +421,7 @@ public class DataProvider {
         }
         albums = chooseGenre("jazz");
         for (int i = 1; i < 11; i++) {
-            if (albums.get(i).get(0).contains(search) || albums.get(i).get(1).contains(search) || albums.get(i).get(4).contains(search)) {
+            if (albums.get(i).get(0).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(1).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(4).toLowerCase().contains(search.toLowerCase())) {
                 String albumName = albums.get(i).get(0);
                 String artistName = albums.get(i).get(1);
                 String releaseDate = albums.get(i).get(2);
@@ -435,7 +435,7 @@ public class DataProvider {
         }
         albums = chooseGenre("classical");
         for (int i = 1; i < 11; i++) {
-            if (albums.get(i).get(0).contains(search) || albums.get(i).get(1).contains(search) || albums.get(i).get(4).contains(search)) {
+            if (albums.get(i).get(0).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(1).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(4).toLowerCase().contains(search.toLowerCase())) {
                 String albumName = albums.get(i).get(0);
                 String artistName = albums.get(i).get(1);
                 String releaseDate = albums.get(i).get(2);

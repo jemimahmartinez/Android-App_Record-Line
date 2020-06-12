@@ -13,4 +13,6 @@
 
     <string name="search_title">Search</string>
     <string name="search_hint">Enter text to search</string>
+
+    <string name="transition_string">hello</string>
 </resources>

@@ -55,7 +55,6 @@
                 android:layout_marginBottom="15dp"
                 android:textSize="15sp"/>
             <TextView
-                android:id="@+id/text_view_artist_name"
                 android:text=" | "
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -66,6 +66,7 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     private void loadAlbum(Album album) {
+        this.setTitle(album.getAlbumName());
         int[] id = new int[3];
         for (int i = 0; i < album.imageArray.length; i++) {
             id[i] = this.getResources().getIdentifier(
@@ -90,7 +91,7 @@ public class DetailsActivity extends AppCompatActivity {
         }
     };
 
-    public void orderButtonPressed(View v) { //if email is not entered => cannot place order NEED TO CHANGE
+    public void orderButtonPressed(View v) { //if email is not entered => cannot place order
         if (!vh.priceText.getText().toString().isEmpty() && !vh.usernameEditText.getText().toString().isEmpty()) {
 
             // Gather album info to iterate sale
@@ -108,10 +109,7 @@ public class DetailsActivity extends AppCompatActivity {
             vh.cardViewResults.setVisibility(View.VISIBLE);
             vh.confirmButton.setVisibility(View.VISIBLE);
         } else {
-            if (vh.priceText.getText().toString().isEmpty()) {
-            Toast.makeText(this, "Please enter the price first.", Toast.LENGTH_LONG)
-                    .show();
-            } else if (vh.usernameEditText.getText().toString().isEmpty()) {
+            if (vh.usernameEditText.getText().toString().isEmpty()) {
             Toast.makeText(this, "Please enter a valid email first.", Toast.LENGTH_LONG)
                     .show();
             }

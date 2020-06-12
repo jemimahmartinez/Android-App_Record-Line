@@ -17,6 +17,7 @@ public class ListActivity extends AppCompatActivity {
     public static final String DETAIL_KEY = "album";
     ListView listView;
     String genre;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +25,7 @@ public class ListActivity extends AppCompatActivity {
 
         Intent thisIntent = getIntent();
         genre = thisIntent.getStringExtra("GenreFromMainActivity");
+        this.setTitle(genre);
         List<Album> albumsList = DataProvider.getAlbumList(genre);
         itemsAdapter = new AlbumAdapter(this,
                 R.layout.list_view_album_item,
@@ -37,7 +39,7 @@ public class ListActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Launch the detail view passing book as an extra
+                // Launch the detail view passing album as an extra
                 Intent intent = new Intent(ListActivity.this, DetailsActivity.class);
                 intent.putExtra(DETAIL_KEY, (Serializable) itemsAdapter.getItem(position));
                 intent.putExtra("key", position);

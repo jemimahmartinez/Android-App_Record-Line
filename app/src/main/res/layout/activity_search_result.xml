@@ -8,12 +8,20 @@
 <!--    tools:context=".SearchResultActivity">-->
 
 <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent">-->
+<!--    <TextView-->
+<!--        android:id="@+id/textViewSearchResult"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerInParent="true"/>-->
+<!--</RelativeLayout>-->
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/listViewSR"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/textViewSearchResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"/>
-</RelativeLayout>
+    android:layout_height="match_parent"
+    android:divider="@android:color/transparent"
+    android:dividerHeight="-16dp"
+    tools:context=".SearchResultActivity"/>

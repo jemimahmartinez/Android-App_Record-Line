@@ -45,7 +45,7 @@ public class Order {
 
     public String getOrderMessage() {
         orderMessage = "Thank you for your order, " + username ;
-        orderMessage += "\nYour total price is " + String.valueOf(getTotalPrice());
+        orderMessage += "\nYour total price is $" + String.valueOf(getTotalPrice());
         return orderMessage;
     }
 }

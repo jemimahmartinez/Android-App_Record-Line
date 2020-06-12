@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:padding="16dp"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/image_view_albumPic"
@@ -23,71 +23,107 @@
 <!--        android:id="@+id/text_view_album_name"-->
         <TextView
             android:id="@+id/text_view_albumName"
+            android:fontFamily="@font/oswald"
             android:text="Album Name"
-            android:layout_below="@id/icon_image_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:textSize="20sp"
+            android:textSize="35sp"
             android:layout_gravity="top"/>
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-<!--            android:id="@+id/text_view_artist_name"-->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <!--            android:id="@+id/text_view_artist_name"-->
+                    <TextView
+                        android:id="@+id/text_view_artistName"
+                        android:text="Artist Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp" />
+                    <!--            android:id="@+id/text_view_release_date"-->
+                    <TextView
+                        android:id="@+id/text_view_releaseDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="Release Date"
+                        android:textSize="20sp" />
+                    <!--            android:id="@+id/text_view_price"-->
+
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/text_view_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="center_horizontal"
+                    android:text="Price"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginTop="15dp">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_weight="1.5"
+                android:layout_gravity="center_vertical"/>
             <TextView
-                android:id="@+id/text_view_artistName"
-                android:text="Artist Name"
-                android:layout_below="@id/text_view_album_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:textSize="15sp" />
-<!--            android:id="@+id/text_view_release_date"-->
-            <TextView
-                android:id="@+id/text_view_releaseDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/text_view_album_name"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"
-                android:layout_toRightOf="@id/text_view_artist_name"
-                android:text="Release Date"
-                android:textSize="15sp" />
-<!--            android:id="@+id/text_view_price"-->
-            <TextView
-                android:id="@+id/text_view_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/text_view_album_name"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"
-                android:layout_toRightOf="@id/text_view_artist_name"
-                android:text="Price"
-                android:textSize="15sp" />
+                android:text="  Tracklist  "
+                android:textSize="16dp"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_weight="1.5"
+                android:layout_gravity="center_vertical"/>
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tracklist: "
-            android:layout_marginBottom="15dp"/>
 
         <TextView
             android:id="@+id/text_view_tracklist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="List"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"/>
 
 
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_weight="1.5"
+            android:layout_gravity="center_vertical"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="Your Email"
             android:inputType="textEmailAddress"
+            android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
             android:id="@+id/edit_text_username" />
         <!--            style="@style/HeaderText" for toppings-->
@@ -99,12 +135,12 @@
                 android:layout_height="wrap_content"
                 android:text="Quantity:"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:text="Price:"
-                android:textAlignment="gravity" />
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="right"-->
+<!--                android:text="Price:"-->
+<!--                android:textAlignment="gravity" />-->
         </LinearLayout>
 
 
@@ -149,10 +185,14 @@
         </LinearLayout>
 
         <Button
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:textColor="@color/categoryColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="orderButtonPressed"
-            android:text="Order"/>
+            android:layout_gravity="right"
+            android:text="Place Order"
+            android:textSize="20dp"/>
         <!--        android:onClick="orderButtonPressed"-->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"

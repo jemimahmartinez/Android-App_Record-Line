@@ -29,6 +29,7 @@
             android:layout_centerHorizontal="true"/>
         <TextView
             android:id="@+id/text_view_album_name"
+            style="@style/ListItemTextStyle"
             android:text="Album Name"
             android:layout_below="@id/icon_image_view"
             android:layout_width="wrap_content"

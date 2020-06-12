@@ -79,7 +79,7 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     public void orderButtonPressed(View v) { //if email is not entered => cannot place order NEED TO CHANGE
-        if ( !vh.priceEditText.getText().toString().isEmpty()) {
+        if (!vh.priceEditText.getText().toString().isEmpty() && !vh.usernameEditText.getText().toString().isEmpty()) {
             Intent mIntent = getIntent();
             int key = mIntent.getIntExtra("key", 0);
             Intent thisIntent = getIntent();
@@ -94,8 +94,13 @@ public class DetailsActivity extends AppCompatActivity {
             vh.cardViewResults.setVisibility(View.VISIBLE);
             vh.confirmButton.setVisibility(View.VISIBLE);
         } else {
-            Toast.makeText( this, "Please enter the price first.", Toast.LENGTH_LONG)
+            if (vh.priceEditText.getText().toString().isEmpty()) {
+            Toast.makeText(this, "Please enter the price first.", Toast.LENGTH_LONG)
                     .show();
+            } else if (vh.usernameEditText.getText().toString().isEmpty()) {
+            Toast.makeText(this, "Please enter a valid email first.", Toast.LENGTH_LONG)
+                    .show();
+            }
         }
     }
 

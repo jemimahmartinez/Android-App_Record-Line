@@ -264,7 +264,7 @@ public class DataProvider {
                 "&#8226; Rockit<br/>&#8226; Future Shock<br/>&#8226; TFS<br/>&#8226; Earth Beat<br/>&#8226; Autodrive<br/>&#8226; Rough"));
         List<String> jazzAlbum9= new ArrayList<String>(Arrays.asList("The Beautiful Game", "Vulfpeck", "2016", "19.99",
                 "&#8226; The Sweet Science<br/>&#8226; Animal Spirits<br/>&#8226; Conscious Club<br/>&#8226; El Chepe<br/> <br/>&#8226; 1 For 1, Di Maggio<br/>&#8226; Daddy, He Got A Tesla<br/>&#8226; Aunt Leslie<br/>&#8226; Cory Wong"));
-        List<String> jazzAlbum10= new ArrayList<String>(Arrays.asList("Songs In The Key Of Life", "Stevie Wonder", "1976", "18.99",
+        List<String> jazzAlbum10= new ArrayList<String>(Arrays.asList("Songs In The Key Of Life", "Stevie Wonder", "1976", "34.99",
                 "&#8226; Love's in Need of Love Today<br/>&#8226; Have a Talk with God<br/>&#8226; Village Ghetto Land<br/>&#8226; Contusion<br/>&#8226; Sir Duke<br/> <br/>&#8226; I Wish<br/>&#8226; Knocks Me Off My Feet<br/>&#8226; Pastime Paradise<br/>&#8226; Summer Soft<br/>&#8226; Ordinary Pain<br/> <br/>&#8226; Isn't She Lovely<br/>&#8226; Joy Inside My Tears<br/>&#8226; Black Man<br/> <br/>&#8226; Ngiculela - Es Una Historia - I Am Singing<br/>&#8226; If It's Magic<br/>&#8226; As<br/>&#8226; Another Star"));
 
         //key, album details
@@ -347,11 +347,108 @@ public class DataProvider {
         return albums;
     }
 
-//    public static List<Album> getSearchList(String genre) {
-//        List<Album> searchList = new ArrayList<Album>();
-//
-//        return searchList;
-//    }
+    public static List<Album> getSearchList(String search) {
+        List<Album> searchList = new ArrayList<Album>();
+        Map<Integer, List<String>> albums = chooseGenre("rock");
+        for (int i = 1; i < 11; i++) {
+            if (albums.get(i).get(0).contains(search) || albums.get(i).get(1).contains(search) || albums.get(i).get(4).contains(search)) {
+                String albumName = albums.get(i).get(0);
+                String artistName = albums.get(i).get(1);
+                String releaseDate = albums.get(i).get(2);
+                String price = albums.get(i).get(3);
+                String trackList = albums.get(i).get(4);
+                String vinyl = "album_"+"rock"+String.valueOf(i)+"_1";
+                String [] imageArray = {vinyl, "album_"+"rock"+String.valueOf(i)+"_2", "album_"+"rock"+String.valueOf(i)+"_3"};
+                Album n = new Album("rock", i, albumName, vinyl, artistName, releaseDate, price, trackList, imageArray);
+                searchList.add(n);
+            }
+        }
+        albums = chooseGenre("pop");
+        for (int i = 1; i < 11; i++) {
+            if (albums.get(i).get(0).contains(search) || albums.get(i).get(1).contains(search) || albums.get(i).get(4).contains(search)) {
+                String albumName = albums.get(i).get(0);
+                String artistName = albums.get(i).get(1);
+                String releaseDate = albums.get(i).get(2);
+                String price = albums.get(i).get(3);
+                String trackList = albums.get(i).get(4);
+                String vinyl = "album_"+"pop"+String.valueOf(i)+"_1";
+                String [] imageArray = {vinyl, "album_"+"pop"+String.valueOf(i)+"_2", "album_"+"pop"+String.valueOf(i)+"_3"};
+                Album n = new Album("pop", i, albumName, vinyl, artistName, releaseDate, price, trackList, imageArray);
+                searchList.add(n);
+            }
+        }
+        albums = chooseGenre("metal");
+        for (int i = 1; i < 11; i++) {
+            if (albums.get(i).get(0).contains(search) || albums.get(i).get(1).contains(search) || albums.get(i).get(4).contains(search)) {
+                String albumName = albums.get(i).get(0);
+                String artistName = albums.get(i).get(1);
+                String releaseDate = albums.get(i).get(2);
+                String price = albums.get(i).get(3);
+                String trackList = albums.get(i).get(4);
+                String vinyl = "album_"+"metal"+String.valueOf(i)+"_1";
+                String [] imageArray = {vinyl, "album_"+"metal"+String.valueOf(i)+"_2", "album_"+"metal"+String.valueOf(i)+"_3"};
+                Album n = new Album("metal", i, albumName, vinyl, artistName, releaseDate, price, trackList, imageArray);
+                searchList.add(n);
+            }
+        }
+        albums = chooseGenre("electronic");
+        for (int i = 1; i < 11; i++) {
+            if (albums.get(i).get(0).contains(search) || albums.get(i).get(1).contains(search) || albums.get(i).get(4).contains(search)) {
+                String albumName = albums.get(i).get(0);
+                String artistName = albums.get(i).get(1);
+                String releaseDate = albums.get(i).get(2);
+                String price = albums.get(i).get(3);
+                String trackList = albums.get(i).get(4);
+                String vinyl = "album_"+"electronic"+String.valueOf(i)+"_1";
+                String [] imageArray = {vinyl, "album_"+"electronic"+String.valueOf(i)+"_2", "album_"+"electronic"+String.valueOf(i)+"_3"};
+                Album n = new Album("electronic", i, albumName, vinyl, artistName, releaseDate, price, trackList, imageArray);
+                searchList.add(n);
+            }
+        }
+        albums = chooseGenre("hiphop");
+        for (int i = 1; i < 11; i++) {
+            if (albums.get(i).get(0).contains(search) || albums.get(i).get(1).contains(search) || albums.get(i).get(4).contains(search)) {
+                String albumName = albums.get(i).get(0);
+                String artistName = albums.get(i).get(1);
+                String releaseDate = albums.get(i).get(2);
+                String price = albums.get(i).get(3);
+                String trackList = albums.get(i).get(4);
+                String vinyl = "album_"+"hiphop"+String.valueOf(i)+"_1";
+                String [] imageArray = {vinyl, "album_"+"hiphop"+String.valueOf(i)+"_2", "album_"+"hiphop"+String.valueOf(i)+"_3"};
+                Album n = new Album("hiphop", i, albumName, vinyl, artistName, releaseDate, price, trackList, imageArray);
+                searchList.add(n);
+            }
+        }
+        albums = chooseGenre("jazz");
+        for (int i = 1; i < 11; i++) {
+            if (albums.get(i).get(0).contains(search) || albums.get(i).get(1).contains(search) || albums.get(i).get(4).contains(search)) {
+                String albumName = albums.get(i).get(0);
+                String artistName = albums.get(i).get(1);
+                String releaseDate = albums.get(i).get(2);
+                String price = albums.get(i).get(3);
+                String trackList = albums.get(i).get(4);
+                String vinyl = "album_"+"jazz"+String.valueOf(i)+"_1";
+                String [] imageArray = {vinyl, "album_"+"jazz"+String.valueOf(i)+"_2", "album_"+"jazz"+String.valueOf(i)+"_3"};
+                Album n = new Album("jazz", i, albumName, vinyl, artistName, releaseDate, price, trackList, imageArray);
+                searchList.add(n);
+            }
+        }
+        albums = chooseGenre("classical");
+        for (int i = 1; i < 11; i++) {
+            if (albums.get(i).get(0).contains(search) || albums.get(i).get(1).contains(search) || albums.get(i).get(4).contains(search)) {
+                String albumName = albums.get(i).get(0);
+                String artistName = albums.get(i).get(1);
+                String releaseDate = albums.get(i).get(2);
+                String price = albums.get(i).get(3);
+                String trackList = albums.get(i).get(4);
+                String vinyl = "album_"+"classical"+String.valueOf(i)+"_1";
+                String [] imageArray = {vinyl, "album_"+"classical"+String.valueOf(i)+"_2", "album_"+"classical"+String.valueOf(i)+"_3"};
+                Album n = new Album("classical", i, albumName, vinyl, artistName, releaseDate, price, trackList, imageArray);
+                searchList.add(n);
+            }
+        }
+        return searchList;
+    }
 
     public static List<Album> getAlbumList(String genre) {
         List<Album> albumList = new ArrayList<Album>();

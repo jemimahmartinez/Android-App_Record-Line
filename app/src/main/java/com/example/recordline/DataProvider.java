@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public class DataProvider {
+
     public static int[][] albumSales = {{1,3,4,19,2,4,1,0,1,8},
                                         {2,2,13,0,5,7,6,2,7,10},
                                         {2,13,18,13,16,4,2,7,6,10},

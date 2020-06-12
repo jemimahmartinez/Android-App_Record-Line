@@ -348,103 +348,23 @@ public class DataProvider {
     }
 
     public static List<Album> getSearchList(String search) {
+        String[] genres = {"rock", "pop", "classical", "metal", "electronic", "hiphop", "jazz"};
         List<Album> searchList = new ArrayList<Album>();
-        Map<Integer, List<String>> albums = chooseGenre("rock");
-        for (int i = 1; i < 11; i++) {
-            if (albums.get(i).get(0).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(1).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(4).toLowerCase().contains(search.toLowerCase())) {
-                String albumName = albums.get(i).get(0);
-                String artistName = albums.get(i).get(1);
-                String releaseDate = albums.get(i).get(2);
-                String price = albums.get(i).get(3);
-                String trackList = albums.get(i).get(4);
-                String vinyl = "album_"+"rock"+String.valueOf(i)+"_1";
-                String [] imageArray = {vinyl, "album_"+"rock"+String.valueOf(i)+"_2", "album_"+"rock"+String.valueOf(i)+"_3"};
-                Album n = new Album("rock", i, albumName, vinyl, artistName, releaseDate, price, trackList, imageArray);
-                searchList.add(n);
-            }
-        }
-        albums = chooseGenre("pop");
-        for (int i = 1; i < 11; i++) {
-            if (albums.get(i).get(0).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(1).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(4).toLowerCase().contains(search.toLowerCase())) {
-                String albumName = albums.get(i).get(0);
-                String artistName = albums.get(i).get(1);
-                String releaseDate = albums.get(i).get(2);
-                String price = albums.get(i).get(3);
-                String trackList = albums.get(i).get(4);
-                String vinyl = "album_"+"pop"+String.valueOf(i)+"_1";
-                String [] imageArray = {vinyl, "album_"+"pop"+String.valueOf(i)+"_2", "album_"+"pop"+String.valueOf(i)+"_3"};
-                Album n = new Album("pop", i, albumName, vinyl, artistName, releaseDate, price, trackList, imageArray);
-                searchList.add(n);
-            }
-        }
-        albums = chooseGenre("metal");
-        for (int i = 1; i < 11; i++) {
-            if (albums.get(i).get(0).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(1).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(4).toLowerCase().contains(search.toLowerCase())) {
-                String albumName = albums.get(i).get(0);
-                String artistName = albums.get(i).get(1);
-                String releaseDate = albums.get(i).get(2);
-                String price = albums.get(i).get(3);
-                String trackList = albums.get(i).get(4);
-                String vinyl = "album_"+"metal"+String.valueOf(i)+"_1";
-                String [] imageArray = {vinyl, "album_"+"metal"+String.valueOf(i)+"_2", "album_"+"metal"+String.valueOf(i)+"_3"};
-                Album n = new Album("metal", i, albumName, vinyl, artistName, releaseDate, price, trackList, imageArray);
-                searchList.add(n);
-            }
-        }
-        albums = chooseGenre("electronic");
-        for (int i = 1; i < 11; i++) {
-            if (albums.get(i).get(0).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(1).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(4).toLowerCase().contains(search.toLowerCase())) {
-                String albumName = albums.get(i).get(0);
-                String artistName = albums.get(i).get(1);
-                String releaseDate = albums.get(i).get(2);
-                String price = albums.get(i).get(3);
-                String trackList = albums.get(i).get(4);
-                String vinyl = "album_"+"electronic"+String.valueOf(i)+"_1";
-                String [] imageArray = {vinyl, "album_"+"electronic"+String.valueOf(i)+"_2", "album_"+"electronic"+String.valueOf(i)+"_3"};
-                Album n = new Album("electronic", i, albumName, vinyl, artistName, releaseDate, price, trackList, imageArray);
-                searchList.add(n);
-            }
-        }
-        albums = chooseGenre("hiphop");
-        for (int i = 1; i < 11; i++) {
-            if (albums.get(i).get(0).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(1).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(4).toLowerCase().contains(search.toLowerCase())) {
-                String albumName = albums.get(i).get(0);
-                String artistName = albums.get(i).get(1);
-                String releaseDate = albums.get(i).get(2);
-                String price = albums.get(i).get(3);
-                String trackList = albums.get(i).get(4);
-                String vinyl = "album_"+"hiphop"+String.valueOf(i)+"_1";
-                String [] imageArray = {vinyl, "album_"+"hiphop"+String.valueOf(i)+"_2", "album_"+"hiphop"+String.valueOf(i)+"_3"};
-                Album n = new Album("hiphop", i, albumName, vinyl, artistName, releaseDate, price, trackList, imageArray);
-                searchList.add(n);
-            }
-        }
-        albums = chooseGenre("jazz");
-        for (int i = 1; i < 11; i++) {
-            if (albums.get(i).get(0).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(1).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(4).toLowerCase().contains(search.toLowerCase())) {
-                String albumName = albums.get(i).get(0);
-                String artistName = albums.get(i).get(1);
-                String releaseDate = albums.get(i).get(2);
-                String price = albums.get(i).get(3);
-                String trackList = albums.get(i).get(4);
-                String vinyl = "album_"+"jazz"+String.valueOf(i)+"_1";
-                String [] imageArray = {vinyl, "album_"+"jazz"+String.valueOf(i)+"_2", "album_"+"jazz"+String.valueOf(i)+"_3"};
-                Album n = new Album("jazz", i, albumName, vinyl, artistName, releaseDate, price, trackList, imageArray);
-                searchList.add(n);
-            }
-        }
-        albums = chooseGenre("classical");
-        for (int i = 1; i < 11; i++) {
-            if (albums.get(i).get(0).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(1).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(4).toLowerCase().contains(search.toLowerCase())) {
-                String albumName = albums.get(i).get(0);
-                String artistName = albums.get(i).get(1);
-                String releaseDate = albums.get(i).get(2);
-                String price = albums.get(i).get(3);
-                String trackList = albums.get(i).get(4);
-                String vinyl = "album_"+"classical"+String.valueOf(i)+"_1";
-                String [] imageArray = {vinyl, "album_"+"classical"+String.valueOf(i)+"_2", "album_"+"classical"+String.valueOf(i)+"_3"};
-                Album n = new Album("classical", i, albumName, vinyl, artistName, releaseDate, price, trackList, imageArray);
-                searchList.add(n);
+        Map<Integer, List<String>> albums;
+        for (String genre : genres) {
+             albums = chooseGenre(genre);
+            for (int i = 1; i < 11; i++) {
+                if (albums.get(i).get(0).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(1).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(4).toLowerCase().contains(search.toLowerCase())) {
+                    String albumName = albums.get(i).get(0);
+                    String artistName = albums.get(i).get(1);
+                    String releaseDate = albums.get(i).get(2);
+                    String price = albums.get(i).get(3);
+                    String trackList = albums.get(i).get(4);
+                    String vinyl = "album_"+genre+String.valueOf(i)+"_1";
+                    String [] imageArray = {vinyl, "album_"+genre+String.valueOf(i)+"_2", "album_"+genre+String.valueOf(i)+"_3"};
+                    Album n = new Album(genre, i, albumName, vinyl, artistName, releaseDate, price, trackList, imageArray);
+                    searchList.add(n);
+                }
             }
         }
         return searchList;

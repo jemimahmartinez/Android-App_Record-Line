@@ -22,8 +22,8 @@ public class DetailsActivity extends AppCompatActivity {
     class ViewHolder {
         //centralise all the view initialisations and referencing
         //easier to deal and maintain activity UI interactions
-        EditText priceEditText, usernameEditText;
-        TextView totalOrderTextView, quantityTextView;
+        EditText usernameEditText;
+        TextView totalOrderTextView, quantityTextView, priceText;
         CardView cardViewResults;
         Button confirmButton;
     }
@@ -55,7 +55,7 @@ public class DetailsActivity extends AppCompatActivity {
         loadAlbum(album);
 
         vh = new ViewHolder();
-        vh.priceEditText = (EditText) findViewById(R.id.edit_text_price);
+        vh.priceText = (TextView) findViewById(R.id.text_view_price);
         vh.totalOrderTextView = (TextView) findViewById(R.id.text_view_total_order);
         vh.quantityTextView = (TextView) findViewById(R.id.text_view_quantity);
         vh.cardViewResults = (CardView) findViewById(R.id.card_view_result_message);
@@ -91,7 +91,9 @@ public class DetailsActivity extends AppCompatActivity {
     };
 
     public void orderButtonPressed(View v) { //if email is not entered => cannot place order NEED TO CHANGE
-        if (!vh.priceEditText.getText().toString().isEmpty() && !vh.usernameEditText.getText().toString().isEmpty()) {
+        if (!vh.priceText.getText().toString().isEmpty() && !vh.usernameEditText.getText().toString().isEmpty()) {
+
+            // Gather album info to iterate sale
             Intent mIntent = getIntent();
             int key = mIntent.getIntExtra("key", 0);
             Intent thisIntent = getIntent();
@@ -99,14 +101,14 @@ public class DetailsActivity extends AppCompatActivity {
             String genre = album.getAlbumGenre();
             DataProvider.iterateAlbumSale(genre, key);
 
-            anOrder.setPricePerItem(Double.valueOf(vh.priceEditText.getText().toString()));
+            anOrder.setPricePerItem(Double.valueOf(vh.priceText.getText().toString()));
             anOrder.setUsername(vh.usernameEditText.getText().toString());
 
             vh.totalOrderTextView.setText(anOrder.getOrderMessage()); //used to be (resultMessage)
             vh.cardViewResults.setVisibility(View.VISIBLE);
             vh.confirmButton.setVisibility(View.VISIBLE);
         } else {
-            if (vh.priceEditText.getText().toString().isEmpty()) {
+            if (vh.priceText.getText().toString().isEmpty()) {
             Toast.makeText(this, "Please enter the price first.", Toast.LENGTH_LONG)
                     .show();
             } else if (vh.usernameEditText.getText().toString().isEmpty()) {

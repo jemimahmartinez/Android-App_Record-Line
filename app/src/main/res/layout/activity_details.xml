@@ -33,39 +33,23 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
                     <!--            android:id="@+id/text_view_artist_name"-->
                     <TextView
                         android:id="@+id/text_view_artistName"
                         android:text="Artist Name"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20sp" />
+                        android:layout_height="match_parent"
+                        android:textSize="25sp"/>
                     <!--            android:id="@+id/text_view_release_date"-->
-                    <TextView
-                        android:id="@+id/text_view_releaseDate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:text="Release Date"
-                        android:textSize="20sp" />
-                    <!--            android:id="@+id/text_view_price"-->
 
-                </LinearLayout>
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                    <!--            android:id="@+id/text_view_price"-->
                 <TextView
                     android:id="@+id/dolla"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:gravity="center_horizontal"
                     android:layout_toLeftOf="@+id/text_view_price"
                     android:text="$"
@@ -75,15 +59,23 @@
                 <TextView
                     android:id="@+id/text_view_price"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
+                    android:layout_height="match_parent"
                     android:gravity="center_horizontal"
+                    android:layout_gravity="right"
                     android:text="Price"
                     android:textSize="25sp"
                     android:textStyle="bold"
-                    android:textColor="@color/colorPrimaryDark"/>
-            </RelativeLayout>
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_alignParentRight="true"/>
         </RelativeLayout>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/text_view_releaseDate"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Release Date"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -190,8 +182,8 @@
         <Button
             android:backgroundTint="@color/colorPrimaryDark"
             android:textColor="@color/categoryColor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="190dp"
+            android:layout_height="60dp"
             android:onClick="orderButtonPressed"
             android:layout_gravity="right"
             android:text="Place Order"

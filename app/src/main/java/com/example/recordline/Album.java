@@ -6,6 +6,7 @@ public class Album implements Serializable {
     String genre;
     int digit;
     String albumName, vinylFileName, artistName, releaseDate, price, trackList;
+    String[] imageArray;
 
     public int getDigit() {
         return digit;
@@ -31,7 +32,10 @@ public class Album implements Serializable {
 
     public String getTrackList() { return trackList; }
 
-    public Album(String genre, int digit, String albumName, String vinylFileName, String artistName, String releaseDate, String price, String trackList) {
+    public String[] getImageArray() { return imageArray; }
+
+
+    public Album(String genre, int digit, String albumName, String vinylFileName, String artistName, String releaseDate, String price, String trackList, String[] imageArray) {
         this.genre = genre;
         this.digit = digit;
         this.albumName = albumName;
@@ -40,5 +44,6 @@ public class Album implements Serializable {
         this.releaseDate = releaseDate;
         this.price = price;
         this.trackList = trackList;
+        this.imageArray = imageArray;
     }
 }

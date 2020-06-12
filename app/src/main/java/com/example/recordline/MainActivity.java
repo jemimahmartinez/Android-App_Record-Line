@@ -13,8 +13,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
 
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override

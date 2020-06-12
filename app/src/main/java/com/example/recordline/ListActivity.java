@@ -1,23 +1,15 @@
 package com.example.recordline;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class ListActivity extends AppCompatActivity {
 
@@ -47,8 +39,7 @@ public class ListActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Launch the detail view passing book as an extra
                 Intent intent = new Intent(ListActivity.this, DetailsActivity.class);
-//                intent.putExtra(DETAIL_KEY, itemsAdapter.getItem(position));
-                intent.putExtra(DETAIL_KEY, (Serializable) itemsAdapter.getItem(position));//DataProvider.getAlbumList(genre).indexOf(listView)
+                intent.putExtra(DETAIL_KEY, (Serializable) itemsAdapter.getItem(position));
                 intent.putExtra("key", position);
                 startActivity(intent);
             }

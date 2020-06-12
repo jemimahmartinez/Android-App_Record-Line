@@ -1,15 +1,10 @@
 package com.example.recordline;
 
-import android.widget.Toast;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Vector;
 
 public class DataProvider {
     public static int[][] albumSales = {{1,3,4,19,2,4,1,0,1,8},
@@ -392,22 +387,24 @@ public class DataProvider {
                 String releaseDate = albums.get(key).get(2);
                 String price = albums.get(key).get(3);
                 String trackList = albums.get(key).get(4);
-                String vinyl = "album_" + genre + String.valueOf(key) + "_1";
-                Album n = new Album(genre, digit, albumName, vinyl, artistName, releaseDate, price, trackList);
+                String vinyl = "album_"+genre+String.valueOf(key)+"_1";
+                String [] imageArray = {vinyl, "album_"+genre+String.valueOf(key)+"_2", "album_"+genre+String.valueOf(key)+"_3"};
+                Album n = new Album(genre, digit, albumName, vinyl, artistName, releaseDate, price, trackList, imageArray);
                 albumList.add(n);
             }
         } else {
-            Map<Integer, List<String>> albums = chooseGenre(genre);
-            for (Integer key : albums.keySet()) {
-                int digit = key;
-                String albumName = albums.get(key).get(0);
-                String artistName = albums.get(key).get(1);
-                String releaseDate = albums.get(key).get(2);
-                String price = albums.get(key).get(3);
-                String trackList = albums.get(key).get(4);
-                String vinyl = "album_"+genre+String.valueOf(key)+"_1";
-                Album n = new Album(genre, digit, albumName, vinyl, artistName, releaseDate, price, trackList);
-                albumList.add(n);
+                Map<Integer, List<String>> albums = chooseGenre(genre);
+                for (Integer key : albums.keySet()) {
+                    int digit = key;
+                    String albumName = albums.get(key).get(0);
+                    String artistName = albums.get(key).get(1);
+                    String releaseDate = albums.get(key).get(2);
+                    String price = albums.get(key).get(3);
+                    String trackList = albums.get(key).get(4);
+                    String vinyl = "album_"+genre+String.valueOf(key)+"_1";
+                    String [] imageArray = {vinyl, "album_"+genre+String.valueOf(key)+"_2", "album_"+genre+String.valueOf(key)+"_3"};
+                    Album n = new Album(genre, digit, albumName, vinyl, artistName, releaseDate, price, trackList, imageArray);
+                    albumList.add(n);
             }
         }
         return albumList;

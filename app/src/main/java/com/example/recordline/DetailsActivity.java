@@ -10,14 +10,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.text.Html;
 
-import org.w3c.dom.Text;
-
-import java.util.List;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageListener;
 
 public class DetailsActivity extends AppCompatActivity {
 
@@ -32,27 +30,28 @@ public class DetailsActivity extends AppCompatActivity {
 
     ViewHolder vh;
     Order anOrder;
-    private ImageView albumPic;
     private TextView albumName;
     private TextView artistName;
     private TextView releaseDate;
     private TextView price;
     private TextView tracklist;
-
+    CarouselView carouselView;
+    Album album;
+    int[] sampleImages = {};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
-        albumPic = (ImageView) findViewById(R.id.image_view_albumPic);
         albumName = (TextView) findViewById(R.id.text_view_albumName);
         artistName = (TextView) findViewById(R.id.text_view_artistName);
         releaseDate = (TextView) findViewById(R.id.text_view_releaseDate);
         price = (TextView) findViewById(R.id.text_view_price);
         tracklist = (TextView) findViewById(R.id.text_view_tracklist);
+        carouselView = (CarouselView) findViewById(R.id.carouselView);
 
         Intent thisIntent = getIntent();
-        Album album = (Album) thisIntent.getSerializableExtra(ListActivity.DETAIL_KEY);
+        album = (Album) thisIntent.getSerializableExtra(ListActivity.DETAIL_KEY);
         loadAlbum(album);
 
         vh = new ViewHolder();
@@ -67,16 +66,29 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     private void loadAlbum(Album album) {
-        int id = this.getResources().getIdentifier(
-                album.getVinylFileName(), "drawable",
-                this.getPackageName());
-        albumPic.setImageResource(id);
+        int[] id = new int[3];
+        for (int i = 0; i < album.imageArray.length; i++) {
+            id[i] = this.getResources().getIdentifier(
+                    album.getImageArray()[i], "drawable",
+                    this.getPackageName());
+        }
+
         albumName.setText(album.getAlbumName());
         artistName.setText(album.getArtistName());
         releaseDate.setText(album.getReleaseDate());
         price.setText(album.getPrice());
         tracklist.setText(Html.fromHtml(album.getTrackList()));
+        sampleImages = id;
+        carouselView.setPageCount(sampleImages.length);
+        carouselView.setImageListener(imageListener);
     }
+
+    ImageListener imageListener = new ImageListener() {
+        @Override
+        public void setImageForPosition(int position, ImageView imageView) {
+            imageView.setImageResource(sampleImages[position]);
+        }
+    };
 
     public void orderButtonPressed(View v) { //if email is not entered => cannot place order NEED TO CHANGE
         if (!vh.priceEditText.getText().toString().isEmpty() && !vh.usernameEditText.getText().toString().isEmpty()) {

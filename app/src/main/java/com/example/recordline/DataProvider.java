@@ -315,7 +315,8 @@ public class DataProvider {
             String price = albums.get(key).get(3);
             String trackList = albums.get(key).get(4);
             String vinyl = "album_"+genre+String.valueOf(key)+"_1";
-            Album n = new Album(digit, albumName, vinyl, artistName, releaseDate, price, trackList);
+            String [] imageArray = {vinyl, "album_"+genre+String.valueOf(key)+"_2", "album_"+genre+String.valueOf(key)+"_3"};
+            Album n = new Album(digit, albumName, vinyl, artistName, releaseDate, price, trackList, imageArray);
             albumList.add(n);
         }
         return albumList;

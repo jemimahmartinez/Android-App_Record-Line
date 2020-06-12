@@ -12,14 +12,25 @@
         android:padding="16dp"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/image_view_albumPic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/vinyl1"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:layout_gravity="center"/>
+        <com.synnapps.carouselview.CarouselView
+            android:id="@+id/carouselView"
+            android:layout_width="match_parent"
+            android:layout_height="375dp"
+            app:fillColor="#FFFFFFFF"
+            app:pageColor="#00000000"
+            app:radius="6dp"
+            app:slideInterval="3000"
+            app:strokeColor="#FF777777"
+            app:strokeWidth="1dp"/>
+
+<!--        <ImageView-->
+<!--            android:id="@+id/image_view_albumPic"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/vinyl1"-->
+<!--            android:scaleType="fitCenter"-->
+<!--            android:adjustViewBounds="true"-->
+<!--            android:layout_gravity="center"/>-->
 <!--        android:id="@+id/text_view_album_name"-->
         <TextView
             android:id="@+id/text_view_albumName"

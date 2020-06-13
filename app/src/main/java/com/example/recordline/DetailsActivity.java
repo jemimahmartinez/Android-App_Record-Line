@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.transition.Fade;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,6 +43,7 @@ public class DetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+        setupWindowAnimations();
 
         albumName = (TextView) findViewById(R.id.text_view_albumName);
         artistName = (TextView) findViewById(R.id.text_view_artistName);
@@ -138,5 +140,11 @@ public class DetailsActivity extends AppCompatActivity {
         if(intent.resolveActivity(getPackageManager()) != null) { //need at least one mail app
             startActivity(intent);
         }
+    }
+
+    private void setupWindowAnimations() {
+        Fade fade = new Fade();
+        fade.setDuration(1000);
+        getWindow().setEnterTransition(fade);
     }
 }

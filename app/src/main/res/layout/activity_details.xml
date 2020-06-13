@@ -7,7 +7,6 @@
     android:id="@+id/detailView"
     tools:context=".DetailsActivity">
     <LinearLayout
-        android:transitionName="@string/transition_string"
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:padding="16dp"
@@ -181,7 +180,7 @@
         </LinearLayout>
 
         <Button
-            android:backgroundTint="@color/colorPrimaryDark"
+            android:backgroundTint="@color/colorPrimary"
             android:textColor="@color/categoryColor"
             android:layout_width="190dp"
             android:layout_height="60dp"

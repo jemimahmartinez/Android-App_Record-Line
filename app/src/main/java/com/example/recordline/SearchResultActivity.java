@@ -3,11 +3,16 @@ package com.example.recordline;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.SearchView;
 
 import java.io.Serializable;
 import java.util.List;
@@ -17,7 +22,6 @@ public class SearchResultActivity extends AppCompatActivity {
 
     AlbumAdapter itemsAdapter;
     ListView listView;
-//    TextView mTextViewSearchResult;
     String DETAIL_KEY = "album";
 
     @Override
@@ -25,8 +29,6 @@ public class SearchResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_result);
 
-//        mTextViewSearchResult = findViewById(R.id.album_item);
-//        mTextViewSearchResult = findViewById(R.id.textViewSearchResult);
         if (Intent.ACTION_SEARCH.equals(getIntent().getAction())) {
             handleSearch(getIntent().getStringExtra(SearchManager.QUERY));
         }
@@ -34,8 +36,6 @@ public class SearchResultActivity extends AppCompatActivity {
 
     private void handleSearch(String searchQuery) {
         this.setTitle(searchQuery);
-//        mTextViewSearchResult.setText(searchQuery);
-//        mTextViewSearchResult.findViewsWithText(albumList,searchQuery);
         List<Album> searchList = DataProvider.getSearchList(searchQuery);
         itemsAdapter = new AlbumAdapter(this,
                 R.layout.list_view_album_item,
@@ -56,5 +56,16 @@ public class SearchResultActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_search, menu);
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        MenuItem searchItem = menu.findItem(R.id.menu_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        return true;
     }
 }

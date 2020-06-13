@@ -6,10 +6,8 @@ import androidx.core.app.ActivityOptionsCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.transition.Fade;
 import android.transition.Slide;
 import android.view.View;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -28,7 +26,7 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-
+        setupWindowAnimations();
 
         Intent thisIntent = getIntent();
         genre = thisIntent.getStringExtra("GenreFromMainActivity");
@@ -56,11 +54,9 @@ public class ListActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        overridePendingTransition(
-                android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+    private void setupWindowAnimations() {
+        Slide slide = new Slide();
+        slide.setDuration(1000);
+        getWindow().setExitTransition(slide);
     }
-
 }

@@ -43,6 +43,7 @@ public class DetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+        setupWindowAnimations();
 
         albumName = (TextView) findViewById(R.id.text_view_albumName);
         artistName = (TextView) findViewById(R.id.text_view_artistName);
@@ -141,5 +142,9 @@ public class DetailsActivity extends AppCompatActivity {
         }
     }
 
-
+    private void setupWindowAnimations() {
+        Fade fade = new Fade();
+        fade.setDuration(1000);
+        getWindow().setEnterTransition(fade);
+    }
 }

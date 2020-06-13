@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerViewAlbumAdapter adapter;
     public static final String DETAIL_KEY = "album";
+//    private View.OnClickListener onItemClickListener;
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +41,26 @@ public class MainActivity extends AppCompatActivity {
         List<Album> albumsList = DataProvider.getAlbumList("top");
 
         // set up the RecyclerView
-        RecyclerView recyclerView = findViewById(R.id.rvAlbums);
+        recyclerView = (RecyclerView) findViewById(R.id.rvAlbums);
         LinearLayoutManager horizontalLayoutManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(horizontalLayoutManager);
         adapter = new RecyclerViewAlbumAdapter(this, albumsList);
-        //adapter.setClickListener((RecyclerViewAlbumAdapter.ItemClickListener) this);
+//        adapter.setClickListener((RecyclerViewAlbumAdapter.ItemClickListener) this);
         recyclerView.setAdapter(adapter);
-//        showDetailsActivity();
+        recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(this, recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
+                intent.putExtra("album", (Serializable) adapter.getItem(position));
+                intent.putExtra("key", position);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onLongItemClick(View view, int position) {
+                //do nothing
+            }
+        }));
 
 //        CardView topCardView = findViewById(R.id.activity_main_top_albums);
 //        topCardView.setOnClickListener(this.View.OnClickListener);
@@ -204,5 +219,49 @@ public class MainActivity extends AppCompatActivity {
         SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         return true;
+    }
+
+    public static class RecyclerItemClickListener implements RecyclerView.OnItemTouchListener {
+        private OnItemClickListener mListener;
+
+        public interface OnItemClickListener {
+            public void onItemClick(View view, int position);
+
+            public void onLongItemClick(View view, int position);
+        }
+
+        GestureDetector mGestureDetector;
+
+        public RecyclerItemClickListener(Context context, final RecyclerView recyclerView, OnItemClickListener listener) {
+            mListener = listener;
+            mGestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
+                @Override
+                public boolean onSingleTapUp(MotionEvent e) {
+                    return true;
+                }
+
+                @Override
+                public void onLongPress(MotionEvent e) {
+                    View child = recyclerView.findChildViewUnder(e.getX(), e.getY());
+                    if (child != null && mListener != null) {
+                        mListener.onLongItemClick(child, recyclerView.getChildAdapterPosition(child));
+                    }
+                }
+            });
+        }
+
+        @Override public boolean onInterceptTouchEvent(RecyclerView view, MotionEvent e) {
+            View childView = view.findChildViewUnder(e.getX(), e.getY());
+            if (childView != null && mListener != null && mGestureDetector.onTouchEvent(e)) {
+                mListener.onItemClick(childView, view.getChildAdapterPosition(childView));
+                return true;
+            }
+            return false;
+        }
+
+        @Override public void onTouchEvent(RecyclerView view, MotionEvent motionEvent) { }
+
+        @Override
+        public void onRequestDisallowInterceptTouchEvent (boolean disallowIntercept){}
     }
 }

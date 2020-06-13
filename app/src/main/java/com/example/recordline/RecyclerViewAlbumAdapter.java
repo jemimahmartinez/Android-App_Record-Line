@@ -72,8 +72,8 @@ public class RecyclerViewAlbumAdapter extends RecyclerView.Adapter<RecyclerViewA
     }
 
     // convenience method for getting data at click position
-    String getItem(int id) {
-        return "test";//mData.get(id);
+    Album getItem(int id) {
+        return mData.get(id);//mData.get(id);
     }
 
     // allows clicks events to be caught
@@ -85,4 +85,5 @@ public class RecyclerViewAlbumAdapter extends RecyclerView.Adapter<RecyclerViewA
     public interface ItemClickListener {
         void onItemClick(View view, int position);
     }
+
 }

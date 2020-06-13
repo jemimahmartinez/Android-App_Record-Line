@@ -3,14 +3,20 @@ package com.example.recordline;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.transition.Fade;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.text.Html;
@@ -53,7 +59,7 @@ public class DetailsActivity extends AppCompatActivity {
         carouselView = (CarouselView) findViewById(R.id.carouselView);
 
         Intent thisIntent = getIntent();
-        album = (Album) thisIntent.getSerializableExtra(ListActivity.DETAIL_KEY);
+        album = (Album) thisIntent.getSerializableExtra("album");
         loadAlbum(album);
 
         vh = new ViewHolder();
@@ -146,5 +152,16 @@ public class DetailsActivity extends AppCompatActivity {
         Fade fade = new Fade();
         fade.setDuration(1000);
         getWindow().setEnterTransition(fade);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_search, menu);
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        MenuItem searchItem = menu.findItem(R.id.menu_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        return true;
     }
 }

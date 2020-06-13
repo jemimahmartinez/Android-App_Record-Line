@@ -12,24 +12,35 @@
         android:layout_height="wrap_content"
         android:paddingTop="16dp"
         android:paddingBottom="0dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Top Selling"
+            android:layout_marginTop="-18dp"
+            android:textSize="40dp"
+            android:fontFamily="@font/oswald"
+            android:textStyle=""
+            />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/activity_main_top_albums"
-            style="@style/CategoryCardStyle"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            app:cardBackgroundColor="@color/topAlbumsColor">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-                <TextView
-                    style="@style/CategoryTextStyle"
-                    android:layout_width="wrap_content"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAlbums"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/top_albums"/>
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Browse Genres"
+            android:layout_marginTop="-18dp"
+            android:textSize="40dp"
+            android:fontFamily="@font/oswald"
+            android:textStyle=""
+            />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/activity_main_rock"

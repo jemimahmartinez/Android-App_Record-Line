@@ -8,6 +8,7 @@ import java.util.Map;
 
 public class DataProvider {
 
+    // Album sales array storing the current sale figure for each
     public static int[][] albumSales = {{1,3,4,19,2,4,1,0,1,8},
                                         {2,2,13,0,5,7,6,2,7,10},
                                         {2,13,18,13,16,4,2,7,6,10},
@@ -15,7 +16,7 @@ public class DataProvider {
                                         {1,5,2,5,0,4,16,2,1,21},
                                         {1,12,1,0,2,2,12,12,2,4},
                                         {3,3,2,17,19,2,13,3,1,6}};
-
+    // Iterate the sale figure of an album by 1 for each oder
     public static void iterateAlbumSale(String genre, int c) {
         int r = 0;
         switch(genre) {
@@ -44,15 +45,7 @@ public class DataProvider {
         albumSales[r][c]++;
     }
 
-//    public static <K, V> K getKey(Map<K, V> map, V value) {
-//        for (Map.Entry<K, V> entry : map.entrySet()) {
-//            if (value.equals(entry.getValue())) {
-//                return entry.getKey();
-//            }
-//        }
-//        return null;
-//    }
-
+    // Rock albums data
     public static Map<Integer, List<String>> generateRockAlbumList() {
         Map<Integer, List<String>> albums =
                 new LinkedHashMap<Integer, List<String>>();
@@ -77,7 +70,7 @@ public class DataProvider {
         List<String> rockAlbum10= new ArrayList<String>(Arrays.asList("The Wall", "Pink FLoyd", "1979", "19.99",
                 "Disk 1, Side 1: <br/>&#8226; In the Flesh<br/>&#8226; The Thin Ice<br/>&#8226; Another Brick in the Wall, Part 1<br/>&#8226; The Happiest Days of Our Lives<br/>&#8226; Another Brick in the Wall, Part 2<br/>&#8226; Mother<br/> <br/>Disk 1, Side 2: <br/>&#8226; Goodbye Blue Sky<br/>&#8226; Empty Spaces<br/>&#8226; Young Lust<br/>&#8226; Once of My Turns<br/>&#8226; Don't Leave Me Now<br/>&#8226; Another Brick in the Wall, Part 3<br/>&#8226; Goodbye Cruel World<br/> <br/>Disk 2, Side 1: <br/>&#8226; Hey You<br/>&#8226; Is There Anybody Out There?<br/>&#8226; Nobody Home<br/>&#8226; Vera<br/>&#8226; Bring the Boys Back Home<br/>&#8226; Comfortable Numb<br/> <br/>Disk 2, Side 2: <br/>&#8226; The Show Must Go On<br/>&#8226; In the Flesh<br/>&#8226; Run Like Hell<br/>&#8226; Waiting for the Worms<br/>&#8226; Stop<br/>&#8226; The Trial<br/>&#8226; Outside the Wall"));
 
-        //key, album details
+        // Key, Album details
         albums.put(1, rockAlbum1);
         albums.put(2, rockAlbum2);
         albums.put(3, rockAlbum3);
@@ -91,6 +84,7 @@ public class DataProvider {
         return albums;
     }
 
+    // Pop albums data
     public static Map<Integer, List<String>> generatePopAlbumList() {
         Map<Integer, List<String>> albums =
                 new LinkedHashMap<Integer, List<String>>();
@@ -115,7 +109,7 @@ public class DataProvider {
         List<String> popAlbum10= new ArrayList<String>(Arrays.asList("Parallel Lines", "Blondie", "1979", "24.99",
                 "Side 1: <br/>&#8226; Hanging on the Telephone<br/>&#8226; One Way or Another<br/>&#8226; Picture This<br/>&#8226; Fade Away and Radiate<br/>&#8226; Pretty Baby<br/>&#8226; I Know but I Don't Know<br/> <br/>Side 2: <br/>&#8226; 11:59<br/>&#8226; Will Anything Happen?<br/>&#8226; Sunday Girl<br/>&#8226; Heart of Glass<br/>&#8226; I'm Gonna Love You Too<br/>&#8226; Just Go Away"));
 
-        //key, album details
+        // Key, Album details
         albums.put(1, popAlbum1);
         albums.put(2, popAlbum2);
         albums.put(3, popAlbum3);
@@ -129,6 +123,7 @@ public class DataProvider {
         return albums;
     }
 
+    // Metal albums data
     public static Map<Integer, List<String>> generateMetalAlbumList() {
         Map<Integer, List<String>> albums =
                 new LinkedHashMap<Integer, List<String>>();
@@ -153,7 +148,7 @@ public class DataProvider {
         List<String> metalAlbum10= new ArrayList<String>(Arrays.asList("Rage Against The Machine", "Rage Against The Machine", "1991", "19.99",
                 "&#8226; Bombtrack<br/>&#8226; Killing In The Name<br/>&#8226; Settle For Nothing<br/>&#8226; Bullet In The Head<br/>&#8226; Know Your Enemy<br/>&#8226; Wake Up<br/>&#8226; Fistful Of Steel<br/>&#8226; Township Rebellion<br/>&#8226; Freedom"));
 
-        //key, album details
+        // Key, Album details
         albums.put(1, metalAlbum1);
         albums.put(2, metalAlbum2);
         albums.put(3, metalAlbum3);
@@ -167,6 +162,7 @@ public class DataProvider {
         return albums;
     }
 
+    // Electronic albums data
     public static Map<Integer, List<String>> generateElectronicAlbumList() {
         Map<Integer, List<String>> albums =
                 new LinkedHashMap<Integer, List<String>>();
@@ -191,7 +187,7 @@ public class DataProvider {
         List<String> electAlbum10= new ArrayList<String>(Arrays.asList("Alphelion", "Ross From Friends", "2018", "27.99",
                 "&#8226; Don't Wake Dad<br/>&#8226; John Cage<br/>&#8226; There's A Hole In My Heart<br/>&#8226; March"));
 
-        //key, album details
+        // Key, Album details
         albums.put(1, electAlbum1);
         albums.put(2, electAlbum2);
         albums.put(3, electAlbum3);
@@ -205,6 +201,7 @@ public class DataProvider {
         return albums;
     }
 
+    // Hip hop albums data
     public static Map<Integer, List<String>> generateHipHopAlbumList() {
         Map<Integer, List<String>> albums =
                 new LinkedHashMap<Integer, List<String>>();
@@ -229,7 +226,7 @@ public class DataProvider {
         List<String> hiphopAlbum10= new ArrayList<String>(Arrays.asList("Operation Doomsday", "Mf Doom", "1999", "15.99",
                 "Side 1: <br/>&#8226; The Time We Faced Doom<br/>&#8226; Doomsday<br/>&#8226; Rhymes Like Dimes<br/>&#8226; The Finest<br/>&#8226; Back in the Days<br/>&#8226; Go with the Flow<br/>&#8226; Tick Tock<br/>&#8226; Red & Gold<br/>&#8226; The Hands of Doom<br/> <br/>Side 2: <br/>&#8226; Doom, Are You Awake<br/>&#8226; Hey<br/>&#8226; Operation Greenbacks<br/>&#8226; The Mic<br/>&#8226; The Mystery of Doom<br/>&#8226; Dead Bent<br/>&#8226; Gas Drawls<br/>&#8226; Question Mark<br/>&#8226; Hero Vs Villain"));
 
-        //key, album details
+        //Key, Album details
         albums.put(1, hiphopAlbum1);
         albums.put(2, hiphopAlbum2);
         albums.put(3, hiphopAlbum3);
@@ -243,6 +240,7 @@ public class DataProvider {
         return albums;
     }
 
+    // Jazz albums data
     public static Map<Integer, List<String>> generateJazzAlbumList() {
         Map<Integer, List<String>> albums =
                 new LinkedHashMap<Integer, List<String>>();
@@ -267,7 +265,7 @@ public class DataProvider {
         List<String> jazzAlbum10= new ArrayList<String>(Arrays.asList("Songs In The Key Of Life", "Stevie Wonder", "1976", "34.99",
                 "Disk 1, Side 1: <br/>&#8226; Love's in Need of Love Today<br/>&#8226; Have a Talk with God<br/>&#8226; Village Ghetto Land<br/>&#8226; Contusion<br/>&#8226; Sir Duke<br/> <br/>Disk 1, Side 2: <br/>&#8226; I Wish<br/>&#8226; Knocks Me Off My Feet<br/>&#8226; Pastime Paradise<br/>&#8226; Summer Soft<br/>&#8226; Ordinary Pain<br/> <br/>Disk 2, Side 1: <br/>&#8226; Isn't She Lovely<br/>&#8226; Joy Inside My Tears<br/>&#8226; Black Man<br/> <br/>Disk 2, Side 2: <br/>&#8226; Ngiculela - Es Una Historia - I Am Singing<br/>&#8226; If It's Magic<br/>&#8226; As<br/>&#8226; Another Star"));
 
-        //key, album details
+        //Key, Album details
         albums.put(1, jazzAlbum1);
         albums.put(2, jazzAlbum2);
         albums.put(3, jazzAlbum3);
@@ -281,6 +279,7 @@ public class DataProvider {
         return albums;
     }
 
+    // Classical albums data
     public static Map<Integer, List<String>> generateClassicalAlbumList() {
         Map<Integer, List<String>> albums =
                 new LinkedHashMap<Integer, List<String>>();
@@ -305,7 +304,7 @@ public class DataProvider {
         List<String> classicalAlbum10= new ArrayList<String>(Arrays.asList("Different Trains/Electric Counterpoint", "Steve Reich", "1989", "21.99",
                 "&#8226; Different Trains: America - Before the War<br/>&#8226; Different Trains: Europe - During the War<br/>&#8226; Different Trains: After the War<br/>&#8226; Electric Counterpoint: I. Fast<br/>&#8226; Electric Counterpoint: II. Slow<br/>&#8226; Electric Counterpoint: III. Fast"));
 
-        //key, album details
+        //Key, Album details
         albums.put(1, classicalAlbum1);
         albums.put(2, classicalAlbum2);
         albums.put(3, classicalAlbum3);
@@ -347,6 +346,7 @@ public class DataProvider {
         return albums;
     }
 
+    // Generates an album list based on matches from the search query
     public static List<Album> getSearchList(String search) {
         String[] genres = {"rock", "pop", "classical", "metal", "electronic", "hiphop", "jazz"};
         List<Album> searchList = new ArrayList<Album>();
@@ -354,6 +354,7 @@ public class DataProvider {
         for (String genre : genres) {
              albums = chooseGenre(genre);
             for (int i = 1; i < 11; i++) {
+                // Case insensitive search through artist name, album name, and tracklist
                 if (albums.get(i).get(0).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(1).toLowerCase().contains(search.toLowerCase()) || albums.get(i).get(4).toLowerCase().contains(search.toLowerCase())) {
                     String albumName = albums.get(i).get(0);
                     String artistName = albums.get(i).get(1);
@@ -372,7 +373,9 @@ public class DataProvider {
 
     public static List<Album> getAlbumList(String genre) {
         List<Album> albumList = new ArrayList<Album>();
+        // If the genre passed on is "top" find the current 10 most sold albums
         if (genre.equals("top")) {
+            // Iterates through the n'th album of each genre, this more likely gives each genre a chance compared to be purely on volume of sale figures
             for (int j = 0; j < 10; j++) {
                 int max = 0;
                 for ( int i = 0; i < 7; i++ ) {
@@ -417,6 +420,7 @@ public class DataProvider {
                 albumList.add(n);
             }
         } else {
+                // Compose a list of albums depending on genre passed on
                 Map<Integer, List<String>> albums = chooseGenre(genre);
                 for (Integer key : albums.keySet()) {
                     int digit = key;

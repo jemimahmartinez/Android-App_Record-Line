@@ -4,11 +4,12 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.transition.Slide;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -30,10 +31,15 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
+        // Receive extra info from main activity
         Intent thisIntent = getIntent();
         genre = thisIntent.getStringExtra("GenreFromMainActivity");
+
+        // Set title depending on genre
         String title = genre.substring(0, 1).toUpperCase() + genre.substring(1);
         this.setTitle(title+" Albums");
+
+        // Retrieve the genre appropriate album list from the data provider
         List<Album> albumsList = DataProvider.getAlbumList(genre);
         itemsAdapter = new AlbumAdapter(this,
                 R.layout.list_view_album_item,
@@ -42,8 +48,10 @@ public class ListActivity extends AppCompatActivity {
         listView.setAdapter(itemsAdapter);
         showDetailsActivity();
 
-        overridePendingTransition(
-                android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+        // Album list slide up animation
+        Animation slide_up = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.slide_up);
+        listView.startAnimation(slide_up);
     }
 
     public void showDetailsActivity() {
@@ -63,6 +71,7 @@ public class ListActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // Place search functionality in tool bar
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_search, menu);
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);

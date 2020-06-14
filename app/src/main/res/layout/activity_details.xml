@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/detailView"
     tools:context=".DetailsActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
@@ -30,6 +31,7 @@
             android:layout_height="wrap_content"
             android:textSize="35sp"
             android:layout_gravity="top"/>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -38,7 +40,7 @@
             android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/text_view_artistName"
-                    android:text="Artist Name"
+                    android:text="@string/artist_name"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textSize="25sp"/>
@@ -65,11 +67,12 @@
                     android:layout_alignParentRight="true"/>
         </RelativeLayout>
         </RelativeLayout>
+
         <TextView
             android:id="@+id/text_view_releaseDate"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Release Date"
+            android:text="@string/release_date"
             android:textStyle="bold"
             android:textSize="15sp"/>
 
@@ -88,8 +91,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="  Tracklist  "
-                android:textSize="16dp"
+                android:text="@string/tracklist"
+                android:textSize="16sp"
                 />
             <View
                 android:layout_width="match_parent"
@@ -98,7 +101,6 @@
                 android:layout_weight="1.5"
                 android:layout_gravity="center_vertical"/>
         </LinearLayout>
-
 
         <TextView
             android:id="@+id/text_view_tracklist"
@@ -119,7 +121,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:hint="Your Email"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
@@ -130,7 +132,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Quantity:"/>
+                android:text="@string/quantity"/>
         </LinearLayout>
 
 
@@ -172,7 +174,7 @@
             android:onClick="orderButtonPressed"
             android:layout_gravity="right"
             android:text="Place Order"
-            android:textSize="20dp"/>
+            android:textSize="20sp"/>
         <!--        android:onClick="orderButtonPressed"-->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"

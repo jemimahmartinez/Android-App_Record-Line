@@ -71,10 +71,13 @@ public class DetailsActivity extends AppCompatActivity {
         vh.confirmButton = (Button) findViewById(R.id.confirm_button);
 
         anOrder = new Order();
+
     }
 
     private void loadAlbum(Album album) {
         this.setTitle(album.getAlbumName());
+
+        // Gather all images of album for carousel
         int[] id = new int[3];
         for (int i = 0; i < album.imageArray.length; i++) {
             id[i] = this.getResources().getIdentifier(
@@ -82,6 +85,7 @@ public class DetailsActivity extends AppCompatActivity {
                     this.getPackageName());
         }
 
+        // Set values
         albumName.setText(album.getAlbumName());
         artistName.setText(album.getArtistName());
         releaseDate.setText(album.getReleaseDate());
@@ -99,7 +103,8 @@ public class DetailsActivity extends AppCompatActivity {
         }
     };
 
-    public void orderButtonPressed(View v) { //if email is not entered => cannot place order
+    public void orderButtonPressed(View v) {
+        // If email is not entered then user cannot place order
         if (!vh.priceText.getText().toString().isEmpty() && !vh.usernameEditText.getText().toString().isEmpty()) {
 
             // Gather album info to iterate sale
@@ -110,13 +115,16 @@ public class DetailsActivity extends AppCompatActivity {
             String genre = album.getAlbumGenre();
             DataProvider.iterateAlbumSale(genre, key);
 
+            // Calculate order total
             anOrder.setPricePerItem(Double.valueOf(vh.priceText.getText().toString()));
             anOrder.setUsername(vh.usernameEditText.getText().toString());
 
+            // Display successful order message
             vh.totalOrderTextView.setText(anOrder.getOrderMessage());
             vh.cardViewResults.setVisibility(View.VISIBLE);
             vh.confirmButton.setVisibility(View.VISIBLE);
         } else {
+            // Send a toast message if email is not entered
             if (vh.usernameEditText.getText().toString().isEmpty()) {
             Toast.makeText(this, "Please enter a valid email first.", Toast.LENGTH_LONG)
                     .show();
@@ -138,7 +146,8 @@ public class DetailsActivity extends AppCompatActivity {
         vh.quantityTextView.setText(String.valueOf(anOrder.getQuantity()));
     }
 
-    public void composeEmail(View v) { //send receipt of order to user's email
+    // Send receipt of order to user's email
+    public void composeEmail(View v) {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:" + anOrder.getUsername())); //only email apps should handle this
         intent.putExtra(Intent.EXTRA_SUBJECT, "New Order");
@@ -156,6 +165,7 @@ public class DetailsActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // Place search functionality in tool bar
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_search, menu);
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
@@ -163,5 +173,12 @@ public class DetailsActivity extends AppCompatActivity {
         SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Back button animation trigger
+        super.onBackPressed();
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
 }

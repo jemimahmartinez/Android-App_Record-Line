@@ -10,6 +10,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -34,22 +36,33 @@ public class SearchResultActivity extends AppCompatActivity {
         if (Intent.ACTION_SEARCH.equals(getIntent().getAction())) {
             handleSearch(getIntent().getStringExtra(SearchManager.QUERY));
         }
+
+        // Slide animation
+        Animation slide_up = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.slide_up);
+        listView.startAnimation(slide_up);
     }
 
     private void handleSearch(String searchQuery) {
+        // Set title to search query
         this.setTitle('"'+searchQuery+'"');
+
+        // Retrieve album search list from data provider
         List<Album> searchList = DataProvider.getSearchList(searchQuery);
         itemsAdapter = new AlbumAdapter(this,
                 R.layout.list_view_album_item,
                 searchList);
         listView = (ListView) findViewById(R.id.listViewSR);
         listView.setAdapter(itemsAdapter);
+
+        // Check if when there are no matches prompt the user through a toast
         if (searchList != null && searchList.isEmpty()) {
             Toast.makeText(SearchResultActivity.this, "Sorry there are no matching results!",
                     Toast.LENGTH_LONG).show();
         }
         showDetailsActivity();
     }
+
 
     public void showDetailsActivity() {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -66,6 +79,7 @@ public class SearchResultActivity extends AppCompatActivity {
     }
 
     @Override
+    // Place search functionality in tool bar
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_search, menu);

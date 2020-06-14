@@ -39,6 +39,7 @@ public class Order {
         return quantity*pricePerItem;
     }
 
+    // Compose an order message based on items price and username entered
     public String getOrderMessage() {
         orderMessage = "Thank you for your order, " + username ;
         orderMessage += "\nYour total price is $" + String.valueOf(getTotalPrice());

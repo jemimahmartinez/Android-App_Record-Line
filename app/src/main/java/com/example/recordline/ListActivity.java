@@ -29,7 +29,6 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-        setupWindowAnimations();
 
         Intent thisIntent = getIntent();
         genre = thisIntent.getStringExtra("GenreFromMainActivity");
@@ -61,11 +60,6 @@ public class ListActivity extends AppCompatActivity {
         });
     }
 
-    private void setupWindowAnimations() {
-        Slide slide = new Slide();
-        slide.setDuration(1000);
-        getWindow().setExitTransition(slide);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

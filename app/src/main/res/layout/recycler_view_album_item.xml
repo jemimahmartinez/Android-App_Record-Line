@@ -1,42 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="16dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/album_item"
-        android:layout_width="130dp"
+        android:layout_width="115dp"
         android:layout_height="match_parent"
         app:cardCornerRadius="4dp"
-        app:cardElevation="8dp">
-        <!--    android:onClick="showDetailsActivity"-->
+        app:cardElevation="8dp"
+        app:cardPreventCornerOverlap="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/barrier">
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
-                android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
                 android:id="@+id/icon_image_view"
                 android:layout_width="wrap_content"
-                android:layout_height="140dp"
-                android:src="@drawable/vinyl1"
-                android:layout_gravity="top"/>
+                android:layout_height="130dp"
+                android:src="@drawable/album_hiphop1_1"
+                android:layout_marginTop="-8dp"/>
             <TextView
                 android:id="@+id/text_view_album_name"
                 style="@style/ListItemTextStyle"
                 android:text="Album Name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="4dp"
+                android:gravity="center_horizontal"
                 android:textSize="12sp"/>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="album_item" />
 
 </LinearLayout>

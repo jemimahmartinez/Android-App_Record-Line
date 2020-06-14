@@ -12,35 +12,48 @@
         android:layout_height="wrap_content"
         android:paddingTop="16dp"
         android:paddingBottom="0dp">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/activity_main_top"
+            style="@style/HeaderCardStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/cardview_dark_background">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="Top Selling"
-            android:layout_marginTop="-18dp"
+            android:layout_marginTop="-14dp"
             android:textSize="40dp"
             android:fontFamily="@font/oswald"
             android:textStyle=""
-            />
+            android:textColor="@color/categoryColor"/>
+        </androidx.cardview.widget.CardView>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvAlbums"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="16dp"
-                    android:paddingRight="16dp"
-                    android:paddingBottom="16dp"/>
+                    android:layout_marginTop="-8dp"
+                    android:layout_marginBottom="16dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/activity_main_genres"
+            style="@style/HeaderCardStyle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Browse Genres"
-            android:layout_marginTop="-18dp"
-            android:textSize="40dp"
-            android:fontFamily="@font/oswald"
-            android:textStyle=""
-            />
+            android:backgroundTint="@color/cardview_dark_background">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Browse Genres"
+                android:layout_marginTop="-10dp"
+                android:textSize="40dp"
+                android:fontFamily="@font/oswald"
+                android:textStyle=""
+                android:textColor="@color/categoryColor"/>
+        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/activity_main_rock"

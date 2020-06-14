@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.List;
@@ -26,6 +27,7 @@ public class SearchResultActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        this.setTitle(SearchManager.QUERY);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_result);
 
@@ -35,13 +37,17 @@ public class SearchResultActivity extends AppCompatActivity {
     }
 
     private void handleSearch(String searchQuery) {
-        this.setTitle(searchQuery);
+        this.setTitle('"'+searchQuery+'"');
         List<Album> searchList = DataProvider.getSearchList(searchQuery);
         itemsAdapter = new AlbumAdapter(this,
                 R.layout.list_view_album_item,
                 searchList);
         listView = (ListView) findViewById(R.id.listViewSR);
         listView.setAdapter(itemsAdapter);
+        if (searchList != null && searchList.isEmpty()) {
+            Toast.makeText(SearchResultActivity.this, "Sorry there are no matching results!",
+                    Toast.LENGTH_LONG).show();
+        }
         showDetailsActivity();
     }
 

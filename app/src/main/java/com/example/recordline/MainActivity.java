@@ -63,25 +63,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }));
 
-//        CardView topCardView = findViewById(R.id.activity_main_top_albums);
-//        topCardView.setOnClickListener(this.View.OnClickListener);
-//        CardView rockCardView = findViewById(R.id.activity_main_rock);
-//        rockCardView.setOnClickListener((View.OnClickListener) this);
-//        CardView popCardView = findViewById(R.id.activity_main_pop);
-//        popCardView.setOnClickListener((View.OnClickListener) this);
-//        CardView classicalCardView = findViewById(R.id.activity_main_classical);
-//        classicalCardView.setOnClickListener((View.OnClickListener) this);
-//        CardView metalCardView = findViewById(R.id.activity_main_metal);
-//        metalCardView.setOnClickListener((View.OnClickListener) this);
-//        CardView electronicCardView = findViewById(R.id.activity_main_electronic);
-//        electronicCardView.setOnClickListener(new View.OnClickListener());
-//        CardView hiphopCardView = findViewById(R.id.activity_main_hiphop);
-//        hiphopCardView.setOnClickListener((View.OnClickListener) this);
-//        CardView jazzCardView = findViewById(R.id.activity_main_jazz);
-//        jazzCardView.setOnClickListener((View.OnClickListener) this);
-
-//    }
-
 
 
         CardView rockCardView = findViewById(R.id.activity_main_rock);
@@ -169,47 +150,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-//    public void onClick(View v) {
-//        Intent intent = new Intent(getBaseContext(), ListActivity.class);
-//        switch (v.getId()) {
-//
-//            case R.id.activity_main_top_albums:
-//                intent.putExtra("GenreFromMainActivity", "top");
-//                startActivity(intent);
-//                break;
-//            case R.id.activity_main_rock:
-//                intent.putExtra("GenreFromMainActivity", "rock");
-//                startActivity(intent);
-//                break;
-//            case R.id.activity_main_pop:
-//                intent.putExtra("GenreFromMainActivity", "pop");
-//                startActivity(intent);
-//                break;
-//            case R.id.activity_main_classical:
-//                intent.putExtra("GenreFromMainActivity", "classical");
-//                startActivity(intent);
-//                break;
-//            case R.id.activity_main_metal:
-//                intent.putExtra("GenreFromMainActivity", "metal");
-//                startActivity(intent);
-//                break;
-//            case R.id.activity_main_electronic:
-//                intent.putExtra("GenreFromMainActivity", "electronic");
-//                startActivity(intent);
-//                break;
-//            case R.id.activity_main_hiphop:
-//                intent.putExtra("GenreFromMainActivity", "hiphop");
-//                startActivity(intent);
-//                break;
-//            case R.id.activity_main_jazz:
-//                intent.putExtra("GenreFromMainActivity", "jazz");
-//                startActivity(intent);
-//                break;
-//            default:
-//                break;
-//        }
-//
-//    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

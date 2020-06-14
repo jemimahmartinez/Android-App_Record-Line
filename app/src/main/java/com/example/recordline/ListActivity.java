@@ -42,6 +42,9 @@ public class ListActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(itemsAdapter);
         showDetailsActivity();
+
+        overridePendingTransition(
+                android.R.anim.slide_in_left, android.R.anim.slide_out_right);
     }
 
     public void showDetailsActivity() {

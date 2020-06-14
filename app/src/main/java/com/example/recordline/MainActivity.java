@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("album", (Serializable) adapter.getItem(position));
                 intent.putExtra("key", position);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
 
             @Override

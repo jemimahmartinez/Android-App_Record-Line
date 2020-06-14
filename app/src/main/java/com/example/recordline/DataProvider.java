@@ -9,13 +9,13 @@ import java.util.Map;
 public class DataProvider {
 
     // Album sales array storing the current sale figure for each
-    public static int[][] albumSales = {{1,3,4,19,2,4,1,0,1,8},
-                                        {2,2,13,0,5,7,6,2,7,10},
-                                        {2,13,18,13,16,4,2,7,6,10},
-                                        {1,19,1,3,16,4,9,7,2,1},
-                                        {1,5,2,5,0,4,16,2,1,21},
-                                        {1,12,1,0,2,2,12,12,2,4},
-                                        {3,3,2,17,19,2,13,3,1,6}};
+    public static int[][] albumSales = {{1,3,4,2,2,4,1,5,1,3},
+                                        {2,2,3,0,5,7,6,2,7,4},
+                                        {2,3,8,3,6,4,2,2,6,6},
+                                        {1,9,1,3,6,4,7,4,2,1},
+                                        {1,5,2,5,0,4,7,2,1,5},
+                                        {3,4,1,0,9,2,2,2,2,4},
+                                        {1,3,2,7,6,2,3,3,1,6}};
     // Iterate the sale figure of an album by 1 for each oder
     public static void iterateAlbumSale(String genre, int c) {
         int r = 0;

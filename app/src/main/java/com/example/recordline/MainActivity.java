@@ -193,4 +193,10 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onRequestDisallowInterceptTouchEvent (boolean disallowIntercept){}
     }
+
+    @Override
+    public void onBackPressed() {
+        if(adapter!=null)
+            adapter.notifyDataSetChanged();
+    }
 }

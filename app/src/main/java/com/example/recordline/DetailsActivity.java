@@ -113,7 +113,7 @@ public class DetailsActivity extends AppCompatActivity {
             anOrder.setPricePerItem(Double.valueOf(vh.priceText.getText().toString()));
             anOrder.setUsername(vh.usernameEditText.getText().toString());
 
-            vh.totalOrderTextView.setText(anOrder.getOrderMessage()); //used to be (resultMessage)
+            vh.totalOrderTextView.setText(anOrder.getOrderMessage());
             vh.cardViewResults.setVisibility(View.VISIBLE);
             vh.confirmButton.setVisibility(View.VISIBLE);
         } else {
@@ -138,7 +138,7 @@ public class DetailsActivity extends AppCompatActivity {
         vh.quantityTextView.setText(String.valueOf(anOrder.getQuantity()));
     }
 
-    public void composeEmail(View v) {
+    public void composeEmail(View v) { //send receipt of order to user's email
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:" + anOrder.getUsername())); //only email apps should handle this
         intent.putExtra(Intent.EXTRA_SUBJECT, "New Order");

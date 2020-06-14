@@ -17,10 +17,6 @@ public class Order {
         quantity = 1;
     }
 
-    public double getPricePerItem() {
-        return pricePerItem;
-    }
-
     public void setPricePerItem(double pricePerItem) {
         this.pricePerItem = pricePerItem;
     }

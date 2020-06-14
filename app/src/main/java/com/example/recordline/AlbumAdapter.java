@@ -39,8 +39,6 @@ public class AlbumAdapter extends ArrayAdapter {
         }
 
         //Get the Number object for the current position
-//        Album currentAlbum = mAlbums.get(position);
-
         final Album currentAlbum = (Album) getItem(position);
 
         //Set the attributed of list_view_number_item views

@@ -1,9 +1,5 @@
 package com.example.recordline;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.app.ActivityOptionsCompat;
-
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +12,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SearchView;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.Serializable;
 import java.util.List;
@@ -58,6 +55,7 @@ public class ListActivity extends AppCompatActivity {
                 intent.putExtra("album", (Serializable) itemsAdapter.getItem(position));
                 intent.putExtra("key", position);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
     }

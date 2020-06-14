@@ -60,6 +60,7 @@ public class SearchResultActivity extends AppCompatActivity {
                 intent.putExtra(DETAIL_KEY, (Serializable) itemsAdapter.getItem(position));
                 intent.putExtra("key", position);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
     }

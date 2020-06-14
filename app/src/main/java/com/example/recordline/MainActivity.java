@@ -195,8 +195,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
-        if(adapter!=null)
-            adapter.notifyDataSetChanged();
+    public void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
     }
+
 }
